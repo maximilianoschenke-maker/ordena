@@ -50,8 +50,9 @@ dismiss_foreign_dialogs() {
   adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
   adb pull /sdcard/ui.xml "$OUT/ui.xml" >/dev/null 2>&1
   local button=""
+  # "Close app" y no "Wait": si se espera, el aviso vuelve a aparecer a los pocos segundos.
   if grep -q "isn't responding" "$OUT/ui.xml" 2>/dev/null && ! grep -q "Ordena isn't responding" "$OUT/ui.xml"; then
-    button="Wait"
+    button="Close app"
   elif grep -q "keeps stopping\|has stopped" "$OUT/ui.xml" 2>/dev/null && ! grep -q "Ordena keeps stopping\|Ordena has stopped" "$OUT/ui.xml"; then
     button="Close app"
   fi
@@ -118,6 +119,9 @@ if ! adb install -r app/build/outputs/apk/release/app-release.apk; then
   exit 1
 fi
 adb shell cmd role add-role-holder android.app.role.HOME "$PKG" || echo "No se pudo fijar como inicio"
+# El launcher del emulador a veces deja de responder en segundo plano y su aviso tapa la pantalla.
+# Se ocultan los avisos de error del sistema (las caídas de Ordena igual se detectan en logcat).
+adb shell settings put global hide_error_dialogs 1 || true
 sleep 5
 adb logcat -c
 adb shell am start -W -n "$PKG/.MainActivity"
