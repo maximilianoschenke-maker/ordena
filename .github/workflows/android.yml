@@ -41,7 +41,7 @@ jobs:
             || { bash scripts/report-errors.sh build-logs/compilacion.txt; exit 1; }
 
       - name: Guardar APKs
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: apks
           path: app/build/outputs/apk/**/*.apk
@@ -49,7 +49,7 @@ jobs:
 
       - name: Guardar reporte de pruebas unitarias
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: reporte-pruebas-unitarias
           path: app/build/reports/tests/
@@ -74,7 +74,7 @@ jobs:
 
       - name: Guardar capturas y registros del emulador
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: emulador
           path: device-output/

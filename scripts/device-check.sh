@@ -14,13 +14,12 @@ shot() {
   adb exec-out screencap -p > "$OUT/$1.png" || echo "No se pudo capturar $1"
 }
 
-# Busca un elemento por texto o descripción (exacto o contenido) y lo toca. Con "long" mantiene presionado.
-tap() {
-  local label="$1" mode="${2:-tap}"
+# Busca un elemento por texto o descripción (exacto o contenido) en la pantalla actual e imprime su centro.
+find_center() {
+  local label="$1"
   adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
   adb pull /sdcard/ui.xml "$OUT/ui.xml" >/dev/null 2>&1
-  local coords
-  coords=$(python3 - "$label" "$OUT/ui.xml" <<'PY'
+  python3 - "$label" "$OUT/ui.xml" <<'PY'
 import re, sys, xml.etree.ElementTree as ET
 label, path = sys.argv[1], sys.argv[2]
 try:
@@ -43,7 +42,30 @@ for exact in (True, False):
                     print(c)
                     sys.exit(0)
 PY
-)
+}
+
+# Si OTRA app muestra "no responde" (pasa con el launcher del emulador), se toca "Wait" para seguir.
+# Un "no responde" de Ordena no se toca: lo detecta el control de logcat al final.
+dismiss_foreign_anr() {
+  if grep -q "isn't responding" "$OUT/ui.xml" 2>/dev/null && ! grep -q "Ordena isn't responding" "$OUT/ui.xml"; then
+    echo "Aviso del sistema de otra app cerrado" | tee -a "$OUT/avisos.txt"
+    local c
+    c=$(find_center "Wait")
+    # shellcheck disable=SC2086
+    [ -n "$c" ] && adb shell input tap $c
+    sleep 2
+  fi
+}
+
+# Toca un elemento (con reintentos). Con "long" lo mantiene presionado.
+tap() {
+  local label="$1" mode="${2:-tap}" coords="" attempt
+  for attempt in 1 2 3 4; do
+    coords=$(find_center "$label")
+    [ -n "$coords" ] && break
+    dismiss_foreign_anr
+    sleep 2
+  done
   if [ -z "$coords" ]; then
     echo "No encontré «$label» en pantalla" | tee -a "$OUT/avisos.txt"
     return 1
@@ -73,6 +95,10 @@ if ! adb install -r app/build/outputs/apk/release/app-release.apk; then
   exit 1
 fi
 adb shell cmd role add-role-holder android.app.role.HOME "$PKG" || echo "No se pudo fijar como inicio"
+# Con Ordena como inicio, el launcher del emulador sobra; se desactiva para que no interfiera.
+for other in com.google.android.apps.nexuslauncher com.android.launcher3; do
+  adb shell pm disable-user --user 0 "$other" >/dev/null 2>&1 || true
+done
 adb logcat -c
 adb shell am start -W -n "$PKG/.MainActivity"
 sleep 6
