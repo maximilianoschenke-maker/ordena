@@ -105,11 +105,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="v1.0.${{ github.run_number }}"
-          cp app/build/outputs/apk/release/app-release.apk ordena.apk
+          cp app/build/outputs/apk/release/app-release.apk buenorden.apk
           cat > notas.md <<NOTES
-          **Para instalar:** abre este enlace desde tu teléfono Android, toca \`ordena.apk\`, ábrelo y acepta *Instalar*.
+          **Para instalar:** abre este enlace desde tu teléfono Android, toca \`buenorden.apk\`, ábrelo y acepta *Instalar*.
           Si Android pregunta, permite instalar apps de esta fuente.
 
           Compilación ${VERSION} · commit ${GITHUB_SHA::7} · pasó las pruebas unitarias, de interfaz y en emulador.
           NOTES
-          gh release create "$VERSION" ordena.apk --title "Ordena $VERSION" --notes-file notas.md --latest
+          gh release create "$VERSION" buenorden.apk --title "BuenOrden $VERSION" --notes-file notas.md --latest

@@ -19,7 +19,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
@@ -44,6 +44,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.ordena.data.InstalledApp
@@ -52,7 +53,7 @@ import app.ordena.domain.CategoryMatcher
 import app.ordena.domain.Codec
 
 /**
- * Configurar carpetas: escribir cualquier tema ("juegos", "bancos", "redes sociales"…) y Ordena
+ * Configurar carpetas: escribir cualquier tema ("juegos", "bancos", "redes sociales"…) y BuenOrden
  * entiende a qué categoría se refiere, muestra qué apps irían ahí y la agrega.
  */
 @OptIn(ExperimentalLayoutApi::class)
@@ -63,12 +64,16 @@ fun CategoriesScreen(
     onAddFromText: (String) -> AddResult,
     onAddCategory: (String) -> Unit,
     onRemoveCategory: (String) -> Unit,
-    previewFolder: (String) -> List<InstalledApp>
+    previewFolder: (String) -> List<InstalledApp>,
+    onRenameFolder: (String, String) -> Unit,
+    onMoveFolder: (String, Int) -> Unit
 ) {
     var text by rememberSaveable { mutableStateOf("") }
+    var renamingId by rememberSaveable { mutableStateOf<String?>(null) }
     val customs = state.settings.customs
+    val renamed = state.settings.folderNames
     val activeIds = state.settings.active
-    val match = remember(text, customs) { CategoryMatcher.match(text, customs) }
+    val match = remember(text, customs, renamed) { CategoryMatcher.match(text, customs, renamed) }
     val hasText = Codec.cleanName(text).any { it.isLetterOrDigit() }
     val alreadyActive = match != null && match.id in activeIds
     val preview = remember(match?.id, state.refreshedAt) { match?.let { previewFolder(it.id) }.orEmpty() }
@@ -90,7 +95,7 @@ fun CategoriesScreen(
                 Spacer(Modifier.height(18.dp))
                 ScreenTitle("Categorías")
                 Text(
-                    "Escribe cualquier tema y Ordena entiende qué apps van ahí.",
+                    "Escribe cualquier tema y BuenOrden entiende qué apps van ahí.",
                     color = Palette.TextMuted,
                     fontSize = 15.sp,
                     lineHeight = 22.sp,
@@ -143,8 +148,16 @@ fun CategoriesScreen(
         }
 
         val rows = state.folders.filter { it.id != CategoryCatalog.OTHER }
-        items(rows, key = { "row_${it.id}" }) { folder ->
-            FolderConfigRow(folder, onRemove = { onRemoveCategory(folder.id) })
+        itemsIndexed(rows, key = { _, folder -> "row_${folder.id}" }) { index, folder ->
+            FolderConfigRow(
+                folder = folder,
+                canMoveUp = index > 0,
+                canMoveDown = index < rows.lastIndex,
+                onRename = { renamingId = folder.id },
+                onMoveUp = { onMoveFolder(folder.id, -1) },
+                onMoveDown = { onMoveFolder(folder.id, +1) },
+                onRemove = { onRemoveCategory(folder.id) }
+            )
         }
 
         item(key = "footer") {
@@ -160,6 +173,19 @@ fun CategoriesScreen(
                 PrimaryButton("Listo", onClick = onBack, modifier = Modifier.fillMaxWidth().testTag("categories_done"))
             }
         }
+    }
+
+    val renamingFolder = renamingId?.let { id -> state.folders.firstOrNull { it.id == id } }
+    if (renamingFolder != null) {
+        RenameDialog(
+            current = renamingFolder.name,
+            originalName = CategoryCatalog.byId[renamingFolder.id]?.name,
+            onSave = {
+                onRenameFolder(renamingFolder.id, it)
+                renamingId = null
+            },
+            onDismiss = { renamingId = null }
+        )
     }
 }
 
@@ -195,7 +221,7 @@ private fun CategoryInput(
             value = text,
             onValueChange = { onTextChange(it.take(40)) },
             singleLine = true,
-            textStyle = TextStyle(color = Palette.Text, fontSize = 16.sp, fontFamily = Geist),
+            textStyle = TextStyle(color = Palette.Text, fontSize = 16.sp, fontFamily = LocalAppFont.current),
             cursorBrush = SolidColor(Palette.Text),
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
             keyboardActions = KeyboardActions(onDone = { onSubmit() }),
@@ -216,7 +242,7 @@ private fun CategoryInput(
             modifier = Modifier
                 .height(44.dp)
                 .clip(RoundedCornerShape(22.dp))
-                .background(if (buttonEnabled) Palette.Accent else Palette.SurfaceHigher)
+                .background(if (buttonEnabled) LocalAccent.current else Palette.SurfaceHigher)
                 .clickable(enabled = buttonEnabled, role = Role.Button, onClick = onSubmit)
                 .testTag("category_add")
                 .padding(horizontal = 18.dp),
@@ -269,7 +295,7 @@ private fun UnknownCard(text: String) {
         Column {
             Text("No conozco «$text» todavía", color = Palette.Text, fontSize = 15.sp, fontWeight = FontWeight.SemiBold)
             Text(
-                "Créala igual: quedará vacía y podrás mover apps a ella. Ordena pondrá ahí las apps cuyo nombre la mencione.",
+                "Créala igual: quedará vacía y podrás mover apps a ella. BuenOrden pondrá ahí las apps cuyo nombre la mencione.",
                 color = Palette.TextMuted,
                 fontSize = 13.sp,
                 lineHeight = 18.sp,
@@ -311,7 +337,15 @@ private fun Suggestions(activeIds: List<String>, onAdd: (String) -> Unit) {
 }
 
 @Composable
-private fun FolderConfigRow(folder: Folder, onRemove: () -> Unit) {
+private fun FolderConfigRow(
+    folder: Folder,
+    canMoveUp: Boolean,
+    canMoveDown: Boolean,
+    onRename: () -> Unit,
+    onMoveUp: () -> Unit,
+    onMoveDown: () -> Unit,
+    onRemove: () -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -319,30 +353,55 @@ private fun FolderConfigRow(folder: Folder, onRemove: () -> Unit) {
             .testTag("config_${folder.id}"),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        CategoryIconBox(folder.iconPath, size = 36.dp)
-        Spacer(Modifier.width(12.dp))
-        Column(Modifier.weight(1f)) {
-            Text(folder.name, color = Palette.Text, fontSize = 15.sp, fontWeight = FontWeight.Medium)
-            val count = folder.apps.size
-            Text(
-                when (count) {
-                    0 -> if (folder.isCustom) "Vacía · mueve apps aquí" else "Sin apps por ahora (no se muestra)"
-                    1 -> "1 app"
-                    else -> "$count apps"
-                },
-                color = Palette.TextDim,
-                fontSize = 12.sp
-            )
-        }
-        Box(
+        Row(
             modifier = Modifier
-                .size(44.dp)
-                .clip(CircleShape)
-                .clickable(role = Role.Button, onClickLabel = "Quitar ${folder.name}", onClick = onRemove)
-                .semantics { contentDescription = "Quitar ${folder.name}" },
-            contentAlignment = Alignment.Center
+                .weight(1f)
+                .clip(RoundedCornerShape(14.dp))
+                .clickable(role = Role.Button, onClickLabel = "Renombrar ${folder.name}", onClick = onRename)
+                .testTag("rename_${folder.id}")
+                .padding(vertical = 6.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            LineIcon(UiIcons.CLOSE, contentDescription = null, size = 16.dp, tint = Palette.TextDim)
+            CategoryIconBox(folder.iconPath, size = 36.dp)
+            Spacer(Modifier.width(12.dp))
+            Column(Modifier.weight(1f)) {
+                Text(
+                    folder.name,
+                    color = Palette.Text,
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Medium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                val count = folder.apps.size
+                Text(
+                    when (count) {
+                        0 -> if (folder.isCustom) "Vacía · mueve apps aquí" else "Sin apps (no se muestra)"
+                        1 -> "1 app"
+                        else -> "$count apps"
+                    },
+                    color = Palette.TextDim,
+                    fontSize = 12.sp,
+                    maxLines = 1
+                )
+            }
         }
+        SmallIconButton(UiIcons.UP, "Subir ${folder.name}", enabled = canMoveUp, onClick = onMoveUp)
+        SmallIconButton(UiIcons.DOWN, "Bajar ${folder.name}", enabled = canMoveDown, onClick = onMoveDown)
+        SmallIconButton(UiIcons.CLOSE, "Quitar ${folder.name}", enabled = true, onClick = onRemove)
+    }
+}
+
+@Composable
+private fun SmallIconButton(path: String, label: String, enabled: Boolean, onClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .size(44.dp)
+            .clip(CircleShape)
+            .clickable(enabled = enabled, role = Role.Button, onClickLabel = label, onClick = onClick)
+            .semantics { contentDescription = label },
+        contentAlignment = Alignment.Center
+    ) {
+        LineIcon(path, contentDescription = null, size = 16.dp, tint = if (enabled) Palette.TextMuted else Palette.SurfaceHigher)
     }
 }

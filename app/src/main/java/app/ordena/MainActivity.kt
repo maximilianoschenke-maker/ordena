@@ -18,7 +18,6 @@ import app.ordena.ui.DockAction
 import app.ordena.ui.LauncherViewModel
 import app.ordena.ui.LocalIconProvider
 import app.ordena.ui.OrdenaApp
-import app.ordena.ui.OrdenaTheme
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 
@@ -26,7 +25,7 @@ class MainActivity : ComponentActivity() {
 
     private val viewModel: LauncherViewModel by viewModels()
 
-    /** Se emite cuando el usuario toca el botón de inicio estando ya en Ordena. */
+    /** Se emite cuando el usuario toca el botón de inicio estando ya en BuenOrden. */
     private val homePresses = MutableSharedFlow<Unit>(extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
 
     private val isDefaultHome = mutableStateOf(false)
@@ -50,16 +49,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         isDefaultHome.value = HomeRole.isDefault(this)
         setContent {
-            OrdenaTheme {
-                CompositionLocalProvider(LocalIconProvider provides viewModel) {
-                    OrdenaApp(
-                        viewModel = viewModel,
-                        homePresses = homePresses,
-                        isDefaultHome = isDefaultHome.value,
-                        onRequestDefaultHome = { HomeRole.request(this, roleRequest) },
-                        onDock = ::openDock
-                    )
-                }
+            // El tema (tipografía y acento elegidos) lo aplica OrdenaApp según la configuración.
+            CompositionLocalProvider(LocalIconProvider provides viewModel) {
+                OrdenaApp(
+                    viewModel = viewModel,
+                    homePresses = homePresses,
+                    isDefaultHome = isDefaultHome.value,
+                    onRequestDefaultHome = { HomeRole.request(this, roleRequest) },
+                    onDock = ::openDock
+                )
             }
         }
     }

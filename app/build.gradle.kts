@@ -21,7 +21,7 @@ android {
     }
 
     signingConfigs {
-        // Clave propia de Ordena para instalar el APK directamente (sideload). Ver README.
+        // Clave propia de BuenOrden para instalar el APK directamente (sideload). Ver README.
         create("ordena") {
             storeFile = file("ordena-release.jks")
             storePassword = System.getenv("ORDENA_KEYSTORE_PASSWORD") ?: "ordena-sideload"

@@ -22,12 +22,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.ordena.data.InstalledApp
+import app.ordena.domain.CategoryCatalog
 import kotlinx.coroutines.flow.Flow
 
 /** Rutas: "home", "settings", "categories" o "folder:<id>". */
 private const val HOME = "home"
 private const val SETTINGS = "settings"
 private const val CATEGORIES = "categories"
+private const val PERSONALIZE = "personalize"
 private const val FOLDER_PREFIX = "folder:"
 
 private val BackStackSaver = listSaver<SnapshotStateList<String>, String>(
@@ -91,61 +93,71 @@ fun OrdenaApp(
     }
     val openMove: (InstalledApp) -> Unit = { app -> moveKey = app.key }
 
-    Box(
-        Modifier
-            .fillMaxSize()
-            .background(Palette.Background)
-            .safeDrawingPadding()
-    ) {
-        if (!state.loading && !state.settings.onboardingDone) {
-            OnboardingScreen(
-                state = state,
-                isDefaultHome = isDefaultHome,
-                onRequestDefaultHome = onRequestDefaultHome,
-                onReviewCategories = {
-                    viewModel.completeOnboarding()
-                    goHome()
-                    push(CATEGORIES)
-                },
-                onStart = {
-                    viewModel.completeOnboarding()
-                    goHome()
-                }
-            )
-        } else {
-            MainContent(
-                state = state,
-                current = current,
-                query = query,
-                onQueryChange = { query = it },
-                isDefaultHome = isDefaultHome,
-                viewModel = viewModel,
-                push = ::push,
-                pop = ::pop,
-                isTop = { it == backStack.lastOrNull() },
-                launch = launch,
-                openMove = openMove,
-                onRequestDefaultHome = onRequestDefaultHome,
-                onDock = onDock
-            )
-        }
+    OrdenaTheme(fontId = state.settings.fontId, accentId = state.settings.accentId) {
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(Palette.Background)
+                .safeDrawingPadding()
+        ) {
+            if (!state.loading && !state.settings.onboardingDone) {
+                OnboardingScreen(
+                    state = state,
+                    isDefaultHome = isDefaultHome,
+                    onRequestDefaultHome = onRequestDefaultHome,
+                    onReviewCategories = {
+                        viewModel.completeOnboarding()
+                        goHome()
+                        push(CATEGORIES)
+                    },
+                    onStart = {
+                        viewModel.completeOnboarding()
+                        goHome()
+                    }
+                )
+            } else {
+                MainContent(
+                    state = state,
+                    current = current,
+                    query = query,
+                    onQueryChange = { query = it },
+                    isDefaultHome = isDefaultHome,
+                    viewModel = viewModel,
+                    push = ::push,
+                    pop = ::pop,
+                    isTop = { it == backStack.lastOrNull() },
+                    launch = launch,
+                    openMove = openMove,
+                    onRequestDefaultHome = onRequestDefaultHome,
+                    onDock = onDock
+                )
+            }
 
-        val moving = moveKey?.let { key -> state.apps.firstOrNull { it.key == key } }
-        if (moving != null) {
-            MoveSheet(
-                app = moving,
-                placement = state.placements[moving.key],
-                folders = state.folders,
-                monochrome = state.settings.monoIcons,
-                onMove = { viewModel.moveApp(moving, it) },
-                onCreateFolder = { viewModel.createFolderAndMove(moving, it) },
-                onResetToAuto = { viewModel.resetApp(moving.packageName) },
-                onAppInfo = { viewModel.openAppInfo(moving) },
-                onDismiss = { moveKey = null }
-            )
-        } else if (moveKey != null && !state.loading) {
-            // La app se desinstaló mientras la hoja estaba abierta.
-            LaunchedEffect(moveKey) { moveKey = null }
+            val moving = moveKey?.let { key -> state.apps.firstOrNull { it.key == key } }
+            if (moving != null) {
+                MoveSheet(
+                    app = moving,
+                    placement = state.placements[moving.key],
+                    folders = state.folders,
+                    monochrome = state.settings.monoIcons,
+                    onMove = { viewModel.moveApp(moving, it) },
+                    onCreateFolder = { viewModel.createFolderAndMove(moving, it) },
+                    onResetToAuto = { viewModel.resetApp(moving.packageName) },
+                    onAppInfo = { viewModel.openAppInfo(moving) },
+                    onDismiss = { moveKey = null },
+                    isHidden = moving.packageName in state.settings.hiddenPackages,
+                    onToggleHidden = {
+                        if (moving.packageName in state.settings.hiddenPackages) {
+                            viewModel.unhideApp(moving.packageName)
+                        } else {
+                            viewModel.hideApp(moving)
+                        }
+                    }
+                )
+            } else if (moveKey != null && !state.loading) {
+                // La app se desinstaló mientras la hoja estaba abierta.
+                LaunchedEffect(moveKey) { moveKey = null }
+            }
         }
     }
 }
@@ -173,13 +185,27 @@ private fun MainContent(
                 isDefaultHome = isDefaultHome,
                 onBack = pop,
                 onOpenCategories = { push(CATEGORIES) },
+                onOpenPersonalize = { push(PERSONALIZE) },
                 onRequestDefaultHome = onRequestDefaultHome,
                 onSetNotify = viewModel::setNotifyNewApps,
-                onSetMono = viewModel::setMonoIcons,
-                onSetSortByUsage = viewModel::setSortByUsage,
                 onResetApp = viewModel::resetApp,
+                onUnhideApp = viewModel::unhideApp,
                 onResetAll = viewModel::resetAll,
                 folderName = viewModel::folderName
+            )
+            route == PERSONALIZE -> PersonalizeScreen(
+                state = state,
+                onBack = pop,
+                onSetFont = viewModel::setFont,
+                onSetAccent = viewModel::setAccent,
+                onSetTitle = viewModel::setTitleText,
+                onSetEffect = viewModel::setTitleEffect,
+                onSetFolderSize = viewModel::setFolderSize,
+                onSetShowDate = viewModel::setShowDate,
+                onSetShowDock = viewModel::setShowDock,
+                onSetMono = viewModel::setMonoIcons,
+                onSetSortByUsage = viewModel::setSortByUsage,
+                onResetAppearance = viewModel::resetAppearance
             )
             route == CATEGORIES -> CategoriesScreen(
                 state = state,
@@ -187,7 +213,9 @@ private fun MainContent(
                 onAddFromText = { viewModel.addCategoryFromText(it) },
                 onAddCategory = viewModel::addCategory,
                 onRemoveCategory = viewModel::removeCategory,
-                previewFolder = viewModel::previewFolder
+                previewFolder = viewModel::previewFolder,
+                onRenameFolder = viewModel::renameFolder,
+                onMoveFolder = viewModel::moveFolder
             )
             route.startsWith(FOLDER_PREFIX) -> {
                 val id = route.removePrefix(FOLDER_PREFIX)
@@ -202,7 +230,9 @@ private fun MainContent(
                         sortByUsage = state.settings.sortByUsage,
                         onBack = pop,
                         onLaunch = launch,
-                        onLongPress = openMove
+                        onLongPress = openMove,
+                        onRename = { name: String -> viewModel.renameFolder(folder.id, name) }.takeIf { folder.id != CategoryCatalog.OTHER },
+                        originalName = CategoryCatalog.byId[folder.id]?.name
                     )
                 }
             }

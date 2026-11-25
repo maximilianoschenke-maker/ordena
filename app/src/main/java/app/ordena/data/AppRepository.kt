@@ -91,7 +91,7 @@ class AppRepository(private val context: Context) {
             for (info in activities) {
                 val component = info.componentName
                 val pkg = component.packageName
-                if (pkg == context.packageName) continue // Ordena no se muestra a sí misma.
+                if (pkg == context.packageName) continue // BuenOrden no se muestra a sí misma.
                 val appInfo = info.applicationInfo
                 val label = info.label?.toString()?.trim().orEmpty().ifEmpty { pkg }
                 val key = "${component.flattenToShortString()}#$serial"
@@ -246,6 +246,6 @@ class AppRepository(private val context: Context) {
     }
 
     private companion object {
-        const val TAG = "Ordena"
+        const val TAG = "BuenOrden"
     }
 }

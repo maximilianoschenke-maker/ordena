@@ -95,4 +95,17 @@ class CategoryMatcherTest {
         assertTrue(match!!.isCustom)
         assertEquals("c_universidad", id("Universidad", customs))
     }
+
+    @Test
+    fun reconoceCarpetasRenombradas() {
+        val renamed = mapOf("finanzas" to "Mi Plata", "herramientas" to "Utilidades del cel")
+        val match = CategoryMatcher.match("mi plata", renamed = renamed)
+        assertEquals("finanzas", match?.id)
+        assertEquals("Mi Plata", match?.name)
+        // Los sinónimos originales siguen funcionando y devuelven el nombre nuevo.
+        assertEquals("Mi Plata", CategoryMatcher.match("bancos", renamed = renamed)?.name)
+        assertEquals("herramientas", CategoryMatcher.match("utilidades del cel", renamed = renamed)?.id)
+        // Un nombre vacío no rompe nada.
+        assertEquals("Juegos", CategoryMatcher.match("juegos", renamed = mapOf("juegos" to ""))?.name)
+    }
 }

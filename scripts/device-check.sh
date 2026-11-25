@@ -45,15 +45,15 @@ PY
 }
 
 # Si OTRA app muestra "no responde" o "se detuvo" (pasa con apps del emulador), se cierra el aviso.
-# Los avisos de Ordena no se tocan: los detecta el control de logcat al final.
+# Los avisos de BuenOrden no se tocan: los detecta el control de logcat al final.
 dismiss_foreign_dialogs() {
   adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
   adb pull /sdcard/ui.xml "$OUT/ui.xml" >/dev/null 2>&1
   local button=""
   # "Close app" y no "Wait": si se espera, el aviso vuelve a aparecer a los pocos segundos.
-  if grep -q "isn't responding" "$OUT/ui.xml" 2>/dev/null && ! grep -q "Ordena isn't responding" "$OUT/ui.xml"; then
+  if grep -q "isn't responding" "$OUT/ui.xml" 2>/dev/null && ! grep -q "BuenOrden isn't responding" "$OUT/ui.xml"; then
     button="Close app"
-  elif grep -q "keeps stopping\|has stopped" "$OUT/ui.xml" 2>/dev/null && ! grep -q "Ordena keeps stopping\|Ordena has stopped" "$OUT/ui.xml"; then
+  elif grep -q "keeps stopping\|has stopped" "$OUT/ui.xml" 2>/dev/null && ! grep -q "BuenOrden keeps stopping\|BuenOrden has stopped" "$OUT/ui.xml"; then
     button="Close app"
   fi
   if [ -n "$button" ]; then
@@ -120,7 +120,7 @@ if ! adb install -r app/build/outputs/apk/release/app-release.apk; then
 fi
 adb shell cmd role add-role-holder android.app.role.HOME "$PKG" || echo "No se pudo fijar como inicio"
 # El launcher del emulador a veces deja de responder en segundo plano y su aviso tapa la pantalla.
-# Se ocultan los avisos de error del sistema (las caídas de Ordena igual se detectan en logcat).
+# Se ocultan los avisos de error del sistema (las caídas de BuenOrden igual se detectan en logcat).
 adb shell settings put global hide_error_dialogs 1 || true
 sleep 5
 adb logcat -c
@@ -134,45 +134,54 @@ if ! tap_until_gone "Empezar"; then
 fi
 shot 02-inicio
 
-# El botón de inicio debe traer a Ordena (es la app de inicio).
+# El botón de inicio debe traer a BuenOrden (es la app de inicio).
 adb shell input keyevent KEYCODE_HOME && sleep 3
 shot 03-boton-inicio
 adb shell dumpsys activity activities | grep -m1 -E "topResumedActivity|mResumedActivity" | tee "$OUT/actividad-arriba.txt"
 if ! grep -q "$PKG" "$OUT/actividad-arriba.txt"; then
-  echo "::error::El botón de inicio no llevó a Ordena"
+  echo "::error::El botón de inicio no llevó a BuenOrden"
   status=1
 fi
 
 tap "Ajustes" && sleep 2
 shot 04-ajustes
+tap "Personalizar" && sleep 2
+shot 05-personalizar
+tap "Velocidad" && sleep 1
+tap "Space Grotesk" && sleep 2
+shot 06-personalizar-velocidad
+adb shell input keyevent KEYCODE_HOME && sleep 2
+shot 07-inicio-velocidad
+
+tap "Ajustes" && sleep 2
 tap "Categorías" && sleep 2
 tap "Escribe una categoría" && sleep 1
 adb shell input text "bancos" && sleep 2
-shot 05-categorias-bancos
+shot 08-categorias-bancos
 adb shell input keyevent KEYCODE_BACK && sleep 1
 adb shell input keyevent KEYCODE_HOME && sleep 2
 
 tap "Herramientas" && sleep 2
-shot 06-carpeta
+shot 09-carpeta
 tap "Settings" long && sleep 2
-shot 07-mover
+shot 10-mover
 adb shell input keyevent KEYCODE_BACK && sleep 1
 adb shell input keyevent KEYCODE_HOME && sleep 2
 
 tap "Busca una app o una categoría" && sleep 1
 adb shell input text "juegos" && sleep 2
-shot 08-busqueda
+shot 11-busqueda
 adb shell input keyevent KEYCODE_BACK && sleep 1
 adb shell input keyevent KEYCODE_HOME && sleep 2
 
 adb logcat -d > "$OUT/logcat.txt"
-# Solo cuentan las caídas y congelamientos de Ordena (no los de otras apps del emulador).
+# Solo cuentan las caídas y congelamientos de BuenOrden (no los de otras apps del emulador).
 if grep -A1 "FATAL EXCEPTION" "$OUT/logcat.txt" | grep -q "Process: $PKG,"; then
-  echo "::error::Ordena se cayó (ver logcat.txt)"
+  echo "::error::BuenOrden se cayó (ver logcat.txt)"
   status=1
 fi
 if grep -q "ANR in $PKG" "$OUT/logcat.txt"; then
-  echo "::error::Ordena se congeló (ver logcat.txt)"
+  echo "::error::BuenOrden se congeló (ver logcat.txt)"
   status=1
 fi
 grep -A1 "FATAL EXCEPTION" "$OUT/logcat.txt" | grep "Process:" | sed 's/^/Caída de otra app en el emulador: /' >> "$OUT/avisos.txt" || true

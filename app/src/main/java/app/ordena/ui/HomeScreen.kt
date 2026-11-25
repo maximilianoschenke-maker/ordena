@@ -71,11 +71,15 @@ fun HomeScreen(
 
     Column(Modifier.fillMaxSize().padding(horizontal = 20.dp)) {
         Spacer(Modifier.height(16.dp))
+        val settings = state.settings
         Row(verticalAlignment = Alignment.Bottom) {
             Column(Modifier.weight(1f)) {
-                Text(dateText, color = Palette.TextMuted, fontSize = 13.sp)
-                ScreenTitle("Inicio", Modifier.padding(top = 2.dp))
+                if (settings.showDate) {
+                    Text(dateText, color = Palette.TextMuted, fontSize = 13.sp, modifier = Modifier.padding(bottom = 2.dp))
+                }
+                EffectTitle(text = settings.titleText, effect = settings.titleEffect)
             }
+            Spacer(Modifier.width(8.dp))
             RoundIconButton(UiIcons.SETTINGS, "Ajustes", onOpenSettings, Modifier.testTag("open_settings"))
         }
         Spacer(Modifier.height(18.dp))
@@ -110,20 +114,20 @@ fun HomeScreen(
                     modifier = Modifier.padding(top = 28.dp)
                 )
                 else -> LazyVerticalGrid(
-                    columns = GridCells.Adaptive(minSize = 100.dp),
+                    columns = GridCells.Adaptive(minSize = tileSpec(settings.folderSize).minCellWidth),
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                     contentPadding = PaddingValues(top = 20.dp, bottom = 16.dp),
                     modifier = Modifier.fillMaxSize().testTag("folder_grid")
                 ) {
                     items(state.homeFolders, key = { it.id }) { folder ->
-                        FolderTile(folder, onClick = { onOpenFolder(folder.id) })
+                        FolderTile(folder, onClick = { onOpenFolder(folder.id) }, size = settings.folderSize)
                     }
                 }
             }
         }
 
-        if (!searching) {
+        if (!searching && settings.showDock) {
             Dock(onDock)
             Spacer(Modifier.height(12.dp))
         }
@@ -153,7 +157,7 @@ private fun SearchField(query: String, onQueryChange: (String) -> Unit, onSubmit
             value = query,
             onValueChange = onQueryChange,
             singleLine = true,
-            textStyle = TextStyle(color = Palette.Text, fontSize = 15.sp, fontFamily = Geist),
+            textStyle = TextStyle(color = Palette.Text, fontSize = 15.sp, fontFamily = LocalAppFont.current),
             cursorBrush = SolidColor(Palette.Text),
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Go),
             keyboardActions = KeyboardActions(onGo = { onSubmit() }),
@@ -214,7 +218,9 @@ private fun SearchResults(
     onLaunch: (InstalledApp) -> Unit,
     onLongPress: (InstalledApp) -> Unit
 ) {
-    val match = remember(query, state.settings.customs) { CategoryMatcher.match(query, state.settings.customs) }
+    val match = remember(query, state.settings.customs, state.settings.folderNames) {
+        CategoryMatcher.match(query, state.settings.customs, state.settings.folderNames)
+    }
     val folder = match?.let { m -> state.folders.firstOrNull { it.id == m.id } }
     val results = remember(query, state.apps) { searchApps(state.apps, query) }
 
@@ -258,9 +264,10 @@ private fun SearchResults(
         items(results, key = { it.key }) { app ->
             val placement = state.placements[app.key]
             val folderName = state.folders.firstOrNull { it.id == placement?.categoryId }?.name.orEmpty()
+            val subtitle = if (app.packageName in state.settings.hiddenPackages) "Oculta" else folderName
             AppRow(
                 app = app,
-                subtitle = folderName,
+                subtitle = subtitle,
                 monochrome = state.settings.monoIcons,
                 onClick = { onLaunch(app) },
                 onLongClick = { onLongPress(app) }

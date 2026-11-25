@@ -10,7 +10,7 @@ import android.provider.Settings
 import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 
-/** Saber si Ordena es la pantalla de inicio y pedir que lo sea. */
+/** Saber si BuenOrden es la pantalla de inicio y pedir que lo sea. */
 object HomeRole {
 
     fun isDefault(context: Context): Boolean {
@@ -51,7 +51,7 @@ object HomeRole {
             }
             activity.startActivity(Intent(Settings.ACTION_HOME_SETTINGS))
         } catch (e: Exception) {
-            Log.w("Ordena", "No se pudo pedir el rol de inicio", e)
+            Log.w("BuenOrden", "No se pudo pedir el rol de inicio", e)
             try {
                 activity.startActivity(Intent(Settings.ACTION_SETTINGS))
             } catch (_: Exception) {

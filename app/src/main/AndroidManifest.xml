@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
-        Visibilidad de paquetes (Android 11+): Ordena solo necesita ver las apps que aparecen en el
+        Visibilidad de paquetes (Android 11+): BuenOrden solo necesita ver las apps que aparecen en el
         cajón y saber cuáles responden a ciertas acciones para clasificarlas. No pide QUERY_ALL_PACKAGES.
     -->
     <queries>
@@ -50,7 +50,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ordena">
+        android:theme="@style/Theme.BuenOrden">
 
         <activity
             android:name=".MainActivity"

@@ -2,7 +2,6 @@ package app.ordena.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -45,21 +44,21 @@ fun SettingsScreen(
     isDefaultHome: Boolean,
     onBack: () -> Unit,
     onOpenCategories: () -> Unit,
+    onOpenPersonalize: () -> Unit,
     onRequestDefaultHome: () -> Unit,
     onSetNotify: (Boolean) -> Unit,
-    onSetMono: (Boolean) -> Unit,
-    onSetSortByUsage: (Boolean) -> Unit,
     onResetApp: (String) -> Unit,
+    onUnhideApp: (String) -> Unit,
     onResetAll: () -> Unit,
     folderName: (String) -> String
 ) {
     val s = state.settings
     var confirmReset by remember { mutableStateOf(false) }
+    val labels = remember(state.apps) { state.apps.associate { it.packageName to it.label } }
 
     LazyColumn(
         modifier = Modifier.fillMaxSize().testTag("settings_list"),
-        contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 16.dp, bottom = 32.dp),
-        verticalArrangement = Arrangement.spacedBy(0.dp)
+        contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 16.dp, bottom = 32.dp)
     ) {
         item(key = "header") {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -76,7 +75,7 @@ fun SettingsScreen(
                     Card {
                         Column {
                             Text(
-                                "Ordena aún no es tu pantalla de inicio",
+                                "BuenOrden aún no es tu pantalla de inicio",
                                 color = Palette.Text,
                                 fontSize = 15.sp,
                                 fontWeight = FontWeight.SemiBold
@@ -99,31 +98,24 @@ fun SettingsScreen(
             }
         }
 
-        item(key = "categories") {
+        item(key = "nav") {
             Column {
                 Spacer(Modifier.height(22.dp))
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(22.dp))
-                        .background(Palette.Surface)
-                        .clickable(role = Role.Button, onClick = onOpenCategories)
-                        .testTag("open_categories")
-                        .padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    CategoryIconBox(CategoryCatalog.FOLDER_ICON, size = 40.dp, filled = true)
-                    Spacer(Modifier.width(14.dp))
-                    Column(Modifier.weight(1f)) {
-                        Text("Categorías", color = Palette.Text, fontSize = 15.sp, fontWeight = FontWeight.SemiBold)
-                        Text(
-                            "${s.active.size} activas · escribe «juegos», «bancos»…",
-                            color = Palette.TextDim,
-                            fontSize = 12.sp
-                        )
-                    }
-                    LineIcon(UiIcons.CHEVRON, contentDescription = null, size = 18.dp, tint = Palette.TextDim)
-                }
+                NavRow(
+                    iconPath = CategoryCatalog.FOLDER_ICON,
+                    title = "Categorías",
+                    subtitle = "${s.active.size} carpetas · agrega, renombra y ordena",
+                    tag = "open_categories",
+                    onClick = onOpenCategories
+                )
+                Spacer(Modifier.height(10.dp))
+                NavRow(
+                    iconPath = UiIcons.BRUSH,
+                    title = "Personalizar",
+                    subtitle = "Tipografía, título, colores y tamaño",
+                    tag = "open_personalize",
+                    onClick = onOpenPersonalize
+                )
             }
         }
 
@@ -142,64 +134,47 @@ fun SettingsScreen(
             }
         }
 
-        item(key = "look") {
+        item(key = "rules") {
             Column {
-                SectionLabel("Apariencia", Modifier.padding(start = 4.dp, top = 24.dp, bottom = 8.dp))
-                Card(padding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)) {
-                    Column {
-                        ToggleRow(
-                            title = "Íconos monocromáticos",
-                            subtitle = "Todas las apps en blanco y negro",
-                            checked = s.monoIcons,
-                            onCheckedChange = onSetMono,
-                            showDivider = true
-                        )
-                        Row(
-                            modifier = Modifier.fillMaxWidth().defaultMinSize(minHeight = 60.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Text(
-                                "Orden en carpetas",
-                                color = Palette.Text,
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.Medium,
-                                modifier = Modifier.weight(1f)
-                            )
-                            Segmented(
-                                options = listOf("Más usadas", "A–Z"),
-                                selectedIndex = if (s.sortByUsage) 0 else 1,
-                                onSelect = { onSetSortByUsage(it == 0) }
-                            )
+                SectionLabel("Apps que moviste", Modifier.padding(start = 4.dp, top = 24.dp, bottom = 8.dp))
+                Card(padding = PaddingValues(start = 16.dp, end = 6.dp, top = 2.dp, bottom = 2.dp)) {
+                    if (s.overrides.isEmpty()) {
+                        EmptyNote("Aún no mueves ninguna app. Mantén presionada una app para cambiarla de carpeta.")
+                    } else {
+                        Column {
+                            s.overrides.entries.forEachIndexed { index, (pkg, folderId) ->
+                                RemovableRow(
+                                    text = "${labels[pkg] ?: pkg} → ${folderName(folderId)}",
+                                    actionLabel = "Dejar que BuenOrden elija la carpeta de ${labels[pkg] ?: pkg}",
+                                    iconPath = UiIcons.CLOSE,
+                                    onClick = { onResetApp(pkg) }
+                                )
+                                if (index < s.overrides.size - 1) Divider()
+                            }
                         }
                     }
                 }
             }
         }
 
-        item(key = "rules") {
+        item(key = "hidden") {
             Column {
-                SectionLabel("Apps que moviste", Modifier.padding(start = 4.dp, top = 24.dp, bottom = 8.dp))
+                SectionLabel("Apps ocultas", Modifier.padding(start = 4.dp, top = 24.dp, bottom = 8.dp))
                 Card(padding = PaddingValues(start = 16.dp, end = 6.dp, top = 2.dp, bottom = 2.dp)) {
-                    if (s.overrides.isEmpty()) {
-                        Text(
-                            "Aún no mueves ninguna app. Mantén presionada una app para cambiarla de carpeta.",
-                            color = Palette.TextDim,
-                            fontSize = 13.sp,
-                            lineHeight = 18.sp,
-                            modifier = Modifier.padding(vertical = 14.dp)
-                        )
+                    if (s.hiddenPackages.isEmpty()) {
+                        EmptyNote("No hay apps ocultas. Mantén presionada una app y elige «Ocultar de las carpetas».")
                     } else {
                         Column {
-                            val labels = state.apps.associate { it.packageName to it.label }
-                            s.overrides.entries.forEachIndexed { index, (pkg, folderId) ->
-                                OverrideRow(
-                                    appLabel = labels[pkg] ?: pkg,
-                                    folderLabel = folderName(folderId),
-                                    onRemove = { onResetApp(pkg) }
+                            val hidden = s.hiddenPackages.sortedBy { (labels[it] ?: it).lowercase() }
+                            hidden.forEachIndexed { index, pkg ->
+                                RemovableRow(
+                                    text = labels[pkg] ?: pkg,
+                                    actionLabel = "Mostrar ${labels[pkg] ?: pkg} en las carpetas",
+                                    iconPath = UiIcons.EYE,
+                                    onClick = { onUnhideApp(pkg) },
+                                    tag = "unhide_$pkg"
                                 )
-                                if (index < s.overrides.size - 1) {
-                                    Box(Modifier.fillMaxWidth().height(1.dp).background(Palette.BorderSoft))
-                                }
+                                if (index < hidden.size - 1) Divider()
                             }
                         }
                     }
@@ -212,7 +187,7 @@ fun SettingsScreen(
                 Spacer(Modifier.height(28.dp))
                 SecondaryButton("Restablecer todo", onClick = { confirmReset = true }, modifier = Modifier.fillMaxWidth())
                 Text(
-                    "Ordena ${BuildConfig.VERSION_NAME} · Todo se clasifica en tu teléfono, sin internet.",
+                    "BuenOrden ${BuildConfig.VERSION_NAME} · Todo se clasifica en tu teléfono, sin internet.",
                     color = Palette.TextDim,
                     fontSize = 12.sp,
                     modifier = Modifier.padding(top = 16.dp, start = 4.dp)
@@ -227,8 +202,10 @@ fun SettingsScreen(
             containerColor = Palette.SurfaceHigh,
             titleContentColor = Palette.Text,
             textContentColor = Palette.TextMuted,
-            title = { Text("¿Restablecer Ordena?") },
-            text = { Text("Vuelven las carpetas iniciales y se olvidan las apps que moviste a mano.") },
+            title = { Text("¿Restablecer BuenOrden?") },
+            text = {
+                Text("Vuelven las carpetas y la apariencia iniciales, y se olvidan las apps que moviste u ocultaste.")
+            },
             confirmButton = {
                 TextButton(onClick = {
                     confirmReset = false
@@ -243,57 +220,60 @@ fun SettingsScreen(
 }
 
 @Composable
-private fun OverrideRow(appLabel: String, folderLabel: String, onRemove: () -> Unit) {
+private fun NavRow(iconPath: String, title: String, subtitle: String, tag: String, onClick: () -> Unit) {
     Row(
-        modifier = Modifier.fillMaxWidth().defaultMinSize(minHeight = 52.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(22.dp))
+            .background(Palette.Surface)
+            .clickable(role = Role.Button, onClick = onClick)
+            .testTag(tag)
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(
-            "$appLabel → $folderLabel",
-            color = Palette.Text,
-            fontSize = 14.sp,
-            modifier = Modifier.weight(1f)
-        )
-        Box(
-            modifier = Modifier
-                .size(44.dp)
-                .clip(CircleShape)
-                .clickable(role = Role.Button, onClickLabel = "Olvidar", onClick = onRemove)
-                .semantics { contentDescription = "Dejar que Ordena elija la carpeta de $appLabel" },
-            contentAlignment = Alignment.Center
-        ) {
-            LineIcon(UiIcons.CLOSE, contentDescription = null, size = 16.dp, tint = Palette.TextDim)
+        CategoryIconBox(iconPath, size = 40.dp, filled = true)
+        Spacer(Modifier.width(14.dp))
+        Column(Modifier.weight(1f)) {
+            Text(title, color = Palette.Text, fontSize = 15.sp, fontWeight = FontWeight.SemiBold)
+            Text(subtitle, color = Palette.TextDim, fontSize = 12.sp)
         }
+        LineIcon(UiIcons.CHEVRON, contentDescription = null, size = 18.dp, tint = Palette.TextDim)
     }
 }
 
 @Composable
-private fun Segmented(options: List<String>, selectedIndex: Int, onSelect: (Int) -> Unit) {
+private fun EmptyNote(text: String) {
+    Text(
+        text,
+        color = Palette.TextDim,
+        fontSize = 13.sp,
+        lineHeight = 18.sp,
+        modifier = Modifier.padding(vertical = 14.dp)
+    )
+}
+
+@Composable
+private fun Divider() {
+    Box(Modifier.fillMaxWidth().height(1.dp).background(Palette.BorderSoft))
+}
+
+@Composable
+private fun RemovableRow(text: String, actionLabel: String, iconPath: String, onClick: () -> Unit, tag: String? = null) {
     Row(
-        modifier = Modifier
-            .clip(RoundedCornerShape(12.dp))
-            .background(Palette.Background)
-            .padding(3.dp),
-        horizontalArrangement = Arrangement.spacedBy(2.dp)
+        modifier = Modifier.fillMaxWidth().defaultMinSize(minHeight = 52.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        options.forEachIndexed { index, label ->
-            val selected = index == selectedIndex
-            Box(
-                modifier = Modifier
-                    .height(36.dp)
-                    .clip(RoundedCornerShape(9.dp))
-                    .background(if (selected) Palette.SurfaceHigher else Palette.Background)
-                    .clickable(role = Role.RadioButton, onClickLabel = label) { onSelect(index) }
-                    .padding(horizontal = 12.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    label,
-                    color = if (selected) Palette.Text else Palette.TextMuted,
-                    fontSize = 13.sp,
-                    fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium
-                )
-            }
+        Text(text, color = Palette.Text, fontSize = 14.sp, modifier = Modifier.weight(1f))
+        Box(
+            modifier = Modifier
+                .size(44.dp)
+                .clip(CircleShape)
+                .clickable(role = Role.Button, onClickLabel = actionLabel, onClick = onClick)
+                .semantics { contentDescription = actionLabel }
+                .then(if (tag != null) Modifier.testTag(tag) else Modifier),
+            contentAlignment = Alignment.Center
+        ) {
+            LineIcon(iconPath, contentDescription = null, size = 16.dp, tint = Palette.TextMuted)
         }
     }
 }

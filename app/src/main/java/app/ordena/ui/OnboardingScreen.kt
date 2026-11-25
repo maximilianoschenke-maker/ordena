@@ -96,7 +96,7 @@ fun OnboardingScreen(
                         modifier = Modifier.padding(top = 4.dp, bottom = 14.dp)
                     )
                     SecondaryButton(
-                        "Elegir Ordena como inicio",
+                        "Elegir BuenOrden como inicio",
                         onClick = onRequestDefaultHome,
                         modifier = Modifier.fillMaxWidth().testTag("set_default_home")
                     )
@@ -123,7 +123,7 @@ private fun BrandMark() {
             Modifier
                 .size(30.dp)
                 .clip(RoundedCornerShape(9.dp))
-                .background(Palette.Accent)
+                .background(LocalAccent.current)
                 .padding(7.dp)
         ) {
             Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
@@ -138,7 +138,7 @@ private fun BrandMark() {
             }
         }
         Spacer(Modifier.width(10.dp))
-        Text("Ordena", color = Palette.Text, fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
+        Text("BuenOrden", color = Palette.Text, fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
     }
 }
 

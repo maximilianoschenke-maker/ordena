@@ -1,7 +1,7 @@
 package app.ordena.domain
 
 /**
- * Una categoría (carpeta) que Ordena conoce.
+ * Una categoría (carpeta) que BuenOrden conoce.
  *
  * @param synonyms frases que el usuario puede escribir para referirse a ella ("bancos", "plata").
  * @param keywords palabras que, si aparecen en el nombre o el identificador de una app, sugieren
@@ -19,7 +19,7 @@ data class CategoryDef(
     val iconPath: String
 )
 
-/** Carpeta creada por el usuario con un nombre que Ordena no reconoció. */
+/** Carpeta creada por el usuario con un nombre que BuenOrden no reconoció. */
 data class CustomCategory(val id: String, val name: String)
 
 object CategoryCatalog {

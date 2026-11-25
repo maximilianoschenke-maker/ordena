@@ -61,7 +61,9 @@ fun MoveSheet(
     onCreateFolder: (String) -> Unit,
     onResetToAuto: () -> Unit,
     onAppInfo: () -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    isHidden: Boolean = false,
+    onToggleHidden: () -> Unit = {}
 ) {
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     val scope = rememberCoroutineScope()
@@ -155,7 +157,7 @@ fun MoveSheet(
                         value = newName,
                         onValueChange = { newName = it.take(30) },
                         singleLine = true,
-                        textStyle = TextStyle(color = Palette.Text, fontSize = 16.sp, fontFamily = Geist),
+                        textStyle = TextStyle(color = Palette.Text, fontSize = 16.sp, fontFamily = LocalAppFont.current),
                         cursorBrush = SolidColor(Palette.Text),
                         keyboardOptions = KeyboardOptions(
                             capitalization = KeyboardCapitalization.Sentences,
@@ -176,7 +178,7 @@ fun MoveSheet(
                         modifier = Modifier
                             .height(40.dp)
                             .clip(RoundedCornerShape(20.dp))
-                            .background(if (canCreate) Palette.Accent else Palette.SurfaceHigher)
+                            .background(if (canCreate) LocalAccent.current else Palette.SurfaceHigher)
                             .clickable(enabled = canCreate, role = Role.Button) { closeThen { onCreateFolder(newName) } }
                             .padding(horizontal = 16.dp),
                         contentAlignment = Alignment.Center
@@ -190,7 +192,7 @@ fun MoveSheet(
                     }
                 }
                 Text(
-                    "Si escribes una categoría conocida, como «bancos», Ordena usa esa.",
+                    "Si escribes una categoría conocida, como «bancos», BuenOrden usa esa.",
                     color = Palette.TextDim,
                     fontSize = 12.sp,
                     modifier = Modifier.padding(top = 8.dp, start = 4.dp)
@@ -200,7 +202,12 @@ fun MoveSheet(
             Spacer(Modifier.height(18.dp))
             Box(Modifier.fillMaxWidth().height(1.dp).background(Palette.BorderSoft))
             if (placement?.isUserChoice == true) {
-                SheetAction(UiIcons.UNDO, "Dejar que Ordena elija la carpeta") { closeThen(onResetToAuto) }
+                SheetAction(UiIcons.UNDO, "Dejar que BuenOrden elija la carpeta") { closeThen(onResetToAuto) }
+            }
+            if (isHidden) {
+                SheetAction(UiIcons.EYE, "Mostrar en las carpetas") { closeThen(onToggleHidden) }
+            } else {
+                SheetAction(UiIcons.EYE_OFF, "Ocultar de las carpetas") { closeThen(onToggleHidden) }
             }
             SheetAction(UiIcons.INFO, "Información de la app") { closeThen(onAppInfo) }
         }

@@ -18,7 +18,15 @@ object CategoryMatcher {
     private const val PREFIX = 2
     private const val CONTAINED = 1
 
-    fun match(input: String, customs: List<CustomCategory> = emptyList()): Match? {
+    /**
+     * @param renamed nombres que el usuario le puso a carpetas de BuenOrden (id → nombre): también
+     *        se reconocen al escribirlos, y la coincidencia devuelve ese nombre.
+     */
+    fun match(
+        input: String,
+        customs: List<CustomCategory> = emptyList(),
+        renamed: Map<String, String> = emptyMap()
+    ): Match? {
         val query = TextNormalizer.words(input)
         val compact = query.joinToString("")
         if (compact.length < 2) return null
@@ -31,7 +39,10 @@ object CategoryMatcher {
 
         customs.forEach { consider(it.id, it.name, true, listOf(TextNormalizer.normalize(it.name))) }
         CategoryCatalog.all.forEach { cat ->
-            consider(cat.id, cat.name, false, cat.synonyms + TextNormalizer.normalize(cat.name))
+            val customName = renamed[cat.id]?.takeIf { it.isNotBlank() }
+            val phrases = cat.synonyms + TextNormalizer.normalize(cat.name) +
+                listOfNotNull(customName?.let { TextNormalizer.normalize(it) }?.takeIf { it.isNotEmpty() })
+            consider(cat.id, customName ?: cat.name, false, phrases)
         }
         return best
     }

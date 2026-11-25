@@ -6,9 +6,12 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import app.ordena.data.AppRepository
+import app.ordena.data.AppearanceDefaults
+import app.ordena.data.FolderSize
 import app.ordena.data.InstalledApp
 import app.ordena.data.LauncherSettings
 import app.ordena.data.SettingsStore
+import app.ordena.data.TitleEffect
 import app.ordena.domain.CategoryCatalog
 import app.ordena.domain.CategoryMatcher
 import app.ordena.domain.Classification
@@ -155,7 +158,7 @@ class LauncherViewModel(application: Application) :
         update(settings.copy(overrides = settings.overrides - packageName))
     }
 
-    /** Crea (o reutiliza, si Ordena la reconoce) una carpeta con ese nombre y mueve la app ahí. */
+    /** Crea (o reutiliza, si BuenOrden la reconoce) una carpeta con ese nombre y mueve la app ahí. */
     fun createFolderAndMove(app: InstalledApp, name: String) {
         when (val result = addCategoryFromText(name, announce = false)) {
             is AddResult.Added -> moveApp(app, result.id)
@@ -165,13 +168,13 @@ class LauncherViewModel(application: Application) :
     }
 
     /**
-     * Agrega la carpeta que el usuario escribió. Si Ordena entiende el texto ("bancos", "rrss"),
+     * Agrega la carpeta que el usuario escribió. Si BuenOrden entiende el texto ("bancos", "rrss"),
      * activa esa categoría; si no, crea una carpeta propia con ese nombre.
      */
     fun addCategoryFromText(text: String, announce: Boolean = true): AddResult {
         val cleanName = Codec.cleanName(text)
         if (cleanName.isEmpty() || cleanName.filter { it.isLetterOrDigit() }.isEmpty()) return AddResult.Invalid
-        val match = CategoryMatcher.match(cleanName, settings.customs)
+        val match = CategoryMatcher.match(cleanName, settings.customs, settings.folderNames)
         val result = if (match != null) {
             activate(match.id, match.name)
         } else {
@@ -205,6 +208,79 @@ class LauncherViewModel(application: Application) :
     fun setNotifyNewApps(enabled: Boolean) = update(settings.copy(notifyNewApps = enabled))
     fun completeOnboarding() = update(settings.copy(onboardingDone = true))
 
+    // ----- Personalizar -----
+
+    fun setFont(id: String) = update(settings.copy(fontId = id))
+    fun setAccent(id: String) = update(settings.copy(accentId = id))
+    fun setTitleText(text: String) = update(settings.copy(titleText = AppearanceDefaults.cleanTitle(text)))
+    fun setTitleEffect(effect: TitleEffect) = update(settings.copy(titleEffect = effect))
+    fun setFolderSize(size: FolderSize) = update(settings.copy(folderSize = size))
+    fun setShowDate(show: Boolean) = update(settings.copy(showDate = show))
+    fun setShowDock(show: Boolean) = update(settings.copy(showDock = show))
+
+    /** Vuelve la apariencia a la original sin tocar carpetas ni apps movidas. */
+    fun resetAppearance() {
+        val defaults = LauncherSettings()
+        update(
+            settings.copy(
+                fontId = defaults.fontId,
+                accentId = defaults.accentId,
+                titleText = defaults.titleText,
+                titleEffect = defaults.titleEffect,
+                folderSize = defaults.folderSize,
+                showDate = defaults.showDate,
+                showDock = defaults.showDock,
+                monoIcons = defaults.monoIcons,
+                sortByUsage = defaults.sortByUsage
+            )
+        )
+        _messages.tryEmit("Apariencia restaurada")
+    }
+
+    // ----- Carpetas: nombre y orden -----
+
+    /** Renombra una carpeta. Vacío o igual al nombre original = vuelve al nombre original. */
+    fun renameFolder(id: String, rawName: String) {
+        val name = Codec.cleanName(rawName)
+        val custom = settings.customs.firstOrNull { it.id == id }
+        when {
+            custom != null -> {
+                if (name.isEmpty()) return
+                update(settings.copy(customs = settings.customs.map { if (it.id == id) it.copy(name = name) else it }))
+            }
+            CategoryCatalog.byId[id] != null -> {
+                val original = CategoryCatalog.byId.getValue(id).name
+                val names = if (name.isEmpty() || name == original) {
+                    settings.folderNames - id
+                } else {
+                    settings.folderNames + (id to name)
+                }
+                update(settings.copy(folderNames = names))
+            }
+        }
+    }
+
+    /** Sube (delta = -1) o baja (delta = +1) una carpeta en el inicio. */
+    fun moveFolder(id: String, delta: Int) {
+        val list = settings.active.toMutableList()
+        val from = list.indexOf(id)
+        val to = from + delta
+        if (from < 0 || to !in list.indices) return
+        list.add(to, list.removeAt(from))
+        update(settings.copy(active = list))
+    }
+
+    // ----- Apps ocultas -----
+
+    fun hideApp(app: InstalledApp) {
+        update(settings.copy(hiddenPackages = settings.hiddenPackages + app.packageName))
+        _messages.tryEmit("${app.label} quedó oculta. Puedes encontrarla buscándola.")
+    }
+
+    fun unhideApp(packageName: String) {
+        update(settings.copy(hiddenPackages = settings.hiddenPackages - packageName))
+    }
+
     fun dismissNewApp() {
         newAppKey = null
         newAppOthers = 0
@@ -215,20 +291,23 @@ class LauncherViewModel(application: Application) :
         store.clear()
         newAppKey = null
         update(LauncherSettings(onboardingDone = true, knownPackages = apps.map { it.packageName }.toSet()))
-        _messages.tryEmit("Ordena volvió a su configuración inicial")
+        _messages.tryEmit("BuenOrden volvió a su configuración inicial")
     }
 
     /** Qué apps quedarían en una carpeta si se agregara (o las que ya tiene). Para la vista previa. */
     fun previewFolder(id: String): List<InstalledApp> {
         val active = if (id in settings.active) settings.active else listOf(id) + settings.active
         return apps.filter { app ->
-            place(app, active).categoryId == id
+            app.packageName !in settings.hiddenPackages && place(app, active).categoryId == id
         }
     }
 
     fun folderName(id: String): String = when {
         id == CategoryCatalog.OTHER -> CategoryCatalog.OTHER_NAME
-        else -> CategoryCatalog.byId[id]?.name ?: settings.customs.firstOrNull { it.id == id }?.name ?: id
+        else -> settings.folderNames[id]
+            ?: CategoryCatalog.byId[id]?.name
+            ?: settings.customs.firstOrNull { it.id == id }?.name
+            ?: id
     }
 
     // ----- Íconos -----
@@ -269,8 +348,8 @@ class LauncherViewModel(application: Application) :
     )
 
     /**
-     * Detecta apps recién instaladas comparando con las que Ordena ya conocía (guardadas en disco,
-     * así funciona aunque el sistema haya cerrado Ordena mientras se instalaba algo).
+     * Detecta apps recién instaladas comparando con las que BuenOrden ya conocía (guardadas en disco,
+     * así funciona aunque el sistema haya cerrado BuenOrden mientras se instalaba algo).
      */
     private fun detectNewApps() {
         val current = apps.map { it.packageName }.toSet()
@@ -294,7 +373,10 @@ class LauncherViewModel(application: Application) :
     private fun publish() {
         val s = settings
         val placements = apps.associate { it.key to place(it) }
-        val grouped = apps.groupBy { placements.getValue(it.key).categoryId }
+        // Las apps ocultas no van en ninguna carpeta (la búsqueda sí las encuentra).
+        val grouped = apps
+            .filter { it.packageName !in s.hiddenPackages }
+            .groupBy { placements.getValue(it.key).categoryId }
         val collator = Collator.getInstance().apply { strength = Collator.PRIMARY }
         val byLabel = Comparator<InstalledApp> { a, b -> collator.compare(a.label, b.label) }
         val comparator = if (s.sortByUsage) {
@@ -307,7 +389,10 @@ class LauncherViewModel(application: Application) :
             val folderApps = grouped[id].orEmpty().sortedWith(comparator)
             val def = CategoryCatalog.byId[id]
             when {
-                def != null -> Folder(id, def.name, def.shortName, def.iconPath, folderApps, isCustom = false)
+                def != null -> {
+                    val renamed = s.folderNames[id]
+                    Folder(id, renamed ?: def.name, renamed ?: def.shortName, def.iconPath, folderApps, isCustom = false)
+                }
                 else -> s.customs.firstOrNull { it.id == id }?.let {
                     Folder(id, it.name, it.name, CategoryCatalog.FOLDER_ICON, folderApps, isCustom = true)
                 }

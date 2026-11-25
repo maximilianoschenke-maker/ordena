@@ -3,6 +3,7 @@ package app.ordena.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -12,6 +13,11 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
@@ -25,11 +31,20 @@ fun FolderScreen(
     sortByUsage: Boolean,
     onBack: () -> Unit,
     onLaunch: (InstalledApp) -> Unit,
-    onLongPress: (InstalledApp) -> Unit
+    onLongPress: (InstalledApp) -> Unit,
+    onRename: ((String) -> Unit)? = null,
+    originalName: String? = null
 ) {
+    var renaming by rememberSaveable { mutableStateOf(false) }
     Column(Modifier.fillMaxSize().padding(horizontal = 20.dp)) {
         Spacer(Modifier.height(16.dp))
-        RoundIconButton(UiIcons.BACK, "Volver al inicio", onBack, Modifier.testTag("back"))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RoundIconButton(UiIcons.BACK, "Volver al inicio", onBack, Modifier.testTag("back"))
+            Spacer(Modifier.weight(1f))
+            if (onRename != null) {
+                RoundIconButton(UiIcons.EDIT, "Renombrar carpeta", { renaming = true }, Modifier.testTag("rename_folder"))
+            }
+        }
         Spacer(Modifier.height(20.dp))
         ScreenTitle(folder.name, Modifier.testTag("folder_title"), size = 32)
         val count = folder.apps.size
@@ -76,5 +91,17 @@ fun FolderScreen(
                 }
             }
         }
+    }
+
+    if (renaming && onRename != null) {
+        RenameDialog(
+            current = folder.name,
+            originalName = originalName,
+            onSave = {
+                onRename(it)
+                renaming = false
+            },
+            onDismiss = { renaming = false }
+        )
     }
 }

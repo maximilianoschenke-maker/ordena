@@ -30,6 +30,13 @@ object UiIcons {
     const val HOME = "M3 11l9-7 9 7v9H3zM9 20v-6h6v6"
     const val LOCK = "M5 11h14v10H5zM8 11V8a4 4 0 0 1 8 0v3"
     const val UNDO = "M9 14L4 9l5-5M4 9h10a6 6 0 0 1 0 12h-3"
+    const val EDIT = "M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"
+    const val UP = "M6 15l6-6 6 6"
+    const val DOWN = "M6 9l6 6 6-6"
+    const val EYE = "M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+    const val EYE_OFF =
+        "M3 3l18 18M10.6 5.1A10.9 10.9 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.1 4.1M6.6 6.6A17 17 0 0 0 2 12s3.5 7 10 7a10.6 10.6 0 0 0 5.4-1.4M9.9 9.9a3 3 0 0 0 4.2 4.2"
+    const val BRUSH = "M14 4l6 6-9 9H5v-6zM12 6l6 6"
 }
 
 private val vectorCache = HashMap<String, ImageVector>()

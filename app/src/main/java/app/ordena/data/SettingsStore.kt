@@ -21,7 +21,11 @@ data class LauncherSettings(
     fun sanitized(): LauncherSettings {
         val customIds = customs.map { it.id }.toSet()
         val cleanActive = active.distinct().filter { it in CategoryCatalog.byId || it in customIds }
-        return copy(active = cleanActive)
+        return copy(
+            active = cleanActive,
+            folderNames = folderNames.filterKeys { it in CategoryCatalog.byId }.filterValues { it.isNotBlank() },
+            titleText = AppearanceDefaults.cleanTitle(titleText)
+        )
     }
 }
 
@@ -66,6 +70,15 @@ class SettingsStore(context: Context) {
             .putBoolean(KEY_NOTIFY_NEW, settings.notifyNewApps)
             .putBoolean(KEY_ONBOARDING, settings.onboardingDone)
             .putStringSet(KEY_KNOWN, HashSet(settings.knownPackages))
+            .putString(KEY_FONT, settings.fontId)
+            .putString(KEY_ACCENT, settings.accentId)
+            .putString(KEY_TITLE, settings.titleText)
+            .putString(KEY_TITLE_EFFECT, settings.titleEffect.id)
+            .putString(KEY_FOLDER_SIZE, settings.folderSize.id)
+            .putBoolean(KEY_SHOW_DATE, settings.showDate)
+            .putBoolean(KEY_SHOW_DOCK, settings.showDock)
+            .putString(KEY_FOLDER_NAMES, Codec.encodeMap(settings.folderNames))
+            .putString(KEY_HIDDEN, Codec.encodeIds(settings.hiddenPackages.sorted()))
             .apply()
     }
 
@@ -84,5 +97,14 @@ class SettingsStore(context: Context) {
         const val KEY_NOTIFY_NEW = "notify_new_apps"
         const val KEY_ONBOARDING = "onboarding_done"
         const val KEY_KNOWN = "known_packages"
+        const val KEY_FONT = "font"
+        const val KEY_ACCENT = "accent"
+        const val KEY_TITLE = "title_text"
+        const val KEY_TITLE_EFFECT = "title_effect"
+        const val KEY_FOLDER_SIZE = "folder_size"
+        const val KEY_SHOW_DATE = "show_date"
+        const val KEY_SHOW_DOCK = "show_dock"
+        const val KEY_FOLDER_NAMES = "folder_names"
+        const val KEY_HIDDEN = "hidden_packages"
     }
 }
