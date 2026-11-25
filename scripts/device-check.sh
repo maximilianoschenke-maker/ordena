@@ -44,13 +44,21 @@ for exact in (True, False):
 PY
 }
 
-# Si OTRA app muestra "no responde" (pasa con el launcher del emulador), se toca "Wait" para seguir.
-# Un "no responde" de Ordena no se toca: lo detecta el control de logcat al final.
-dismiss_foreign_anr() {
+# Si OTRA app muestra "no responde" o "se detuvo" (pasa con apps del emulador), se cierra el aviso.
+# Los avisos de Ordena no se tocan: los detecta el control de logcat al final.
+dismiss_foreign_dialogs() {
+  adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
+  adb pull /sdcard/ui.xml "$OUT/ui.xml" >/dev/null 2>&1
+  local button=""
   if grep -q "isn't responding" "$OUT/ui.xml" 2>/dev/null && ! grep -q "Ordena isn't responding" "$OUT/ui.xml"; then
-    echo "Aviso del sistema de otra app cerrado" | tee -a "$OUT/avisos.txt"
+    button="Wait"
+  elif grep -q "keeps stopping\|has stopped" "$OUT/ui.xml" 2>/dev/null && ! grep -q "Ordena keeps stopping\|Ordena has stopped" "$OUT/ui.xml"; then
+    button="Close app"
+  fi
+  if [ -n "$button" ]; then
+    echo "Se cerró un aviso del sistema de otra app ($button)" | tee -a "$OUT/avisos.txt"
     local c
-    c=$(find_center "Wait")
+    c=$(find_center "$button")
     # shellcheck disable=SC2086
     [ -n "$c" ] && adb shell input tap $c
     sleep 2
@@ -63,7 +71,7 @@ tap() {
   for attempt in 1 2 3 4; do
     coords=$(find_center "$label")
     [ -n "$coords" ] && break
-    dismiss_foreign_anr
+    dismiss_foreign_dialogs
     sleep 2
   done
   if [ -z "$coords" ]; then
@@ -77,6 +85,21 @@ tap() {
     # shellcheck disable=SC2086
     adb shell input tap $coords
   fi
+}
+
+# Toca un botón hasta que desaparezca de la pantalla (confirma que el toque hizo efecto).
+tap_until_gone() {
+  local label="$1" attempt
+  for attempt in 1 2 3; do
+    dismiss_foreign_dialogs
+    tap "$label" || return 1
+    sleep 3
+    if [ -z "$(find_center "$label")" ]; then
+      return 0
+    fi
+    echo "«$label» sigue en pantalla tras el intento $attempt" | tee -a "$OUT/avisos.txt"
+  done
+  return 1
 }
 
 echo "::group::Pruebas de interfaz (debug)"
@@ -95,15 +118,16 @@ if ! adb install -r app/build/outputs/apk/release/app-release.apk; then
   exit 1
 fi
 adb shell cmd role add-role-holder android.app.role.HOME "$PKG" || echo "No se pudo fijar como inicio"
-# Con Ordena como inicio, el launcher del emulador sobra; se desactiva para que no interfiera.
-for other in com.google.android.apps.nexuslauncher com.android.launcher3; do
-  adb shell pm disable-user --user 0 "$other" >/dev/null 2>&1 || true
-done
+sleep 5
 adb logcat -c
 adb shell am start -W -n "$PKG/.MainActivity"
 sleep 6
+dismiss_foreign_dialogs
 shot 01-bienvenida
-tap "Empezar" && sleep 3
+if ! tap_until_gone "Empezar"; then
+  echo "::error::En el APK final, el botón Empezar no llevó al inicio"
+  status=1
+fi
 shot 02-inicio
 
 # El botón de inicio debe traer a Ordena (es la app de inicio).
@@ -138,10 +162,16 @@ adb shell input keyevent KEYCODE_BACK && sleep 1
 adb shell input keyevent KEYCODE_HOME && sleep 2
 
 adb logcat -d > "$OUT/logcat.txt"
-if grep -E "FATAL EXCEPTION|ANR in $PKG" "$OUT/logcat.txt"; then
-  echo "::error::La app se cayó o se congeló (ver logcat.txt)"
+# Solo cuentan las caídas y congelamientos de Ordena (no los de otras apps del emulador).
+if grep -A1 "FATAL EXCEPTION" "$OUT/logcat.txt" | grep -q "Process: $PKG,"; then
+  echo "::error::Ordena se cayó (ver logcat.txt)"
   status=1
 fi
+if grep -q "ANR in $PKG" "$OUT/logcat.txt"; then
+  echo "::error::Ordena se congeló (ver logcat.txt)"
+  status=1
+fi
+grep -A1 "FATAL EXCEPTION" "$OUT/logcat.txt" | grep "Process:" | sed 's/^/Caída de otra app en el emulador: /' >> "$OUT/avisos.txt" || true
 echo "::endgroup::"
 
 exit $status
