@@ -1,6 +1,7 @@
 package app.ordena.data
 
 import android.content.Context
+import android.content.SharedPreferences
 import app.ordena.domain.CategoryCatalog
 import app.ordena.domain.Codec
 import app.ordena.domain.CustomCategory
@@ -15,7 +16,20 @@ data class LauncherSettings(
     val sortByUsage: Boolean = true,
     val notifyNewApps: Boolean = true,
     val onboardingDone: Boolean = false,
-    val knownPackages: Set<String> = emptySet()
+    val knownPackages: Set<String> = emptySet(),
+    // Apariencia
+    val fontId: String = AppearanceDefaults.FONT_ID,
+    val accentId: String = AppearanceDefaults.ACCENT_ID,
+    val titleText: String = AppearanceDefaults.TITLE,
+    val titleEffect: TitleEffect = TitleEffect.DISINTEGRATE,
+    val folderSize: FolderSize = FolderSize.NORMAL,
+    val showDate: Boolean = true,
+    val showDock: Boolean = true,
+    // Carpetas y apps
+    /** Nombres que el usuario le puso a carpetas de BuenOrden (id → nombre). */
+    val folderNames: Map<String, String> = emptyMap(),
+    /** Paquetes de apps ocultas en las carpetas (siguen apareciendo al buscar). */
+    val hiddenPackages: Set<String> = emptySet()
 ) {
     /** Quita ids que ya no existen (p. ej. una carpeta del usuario borrada) y repetidos. */
     fun sanitized(): LauncherSettings {
@@ -33,9 +47,9 @@ data class LauncherSettings(
  * Guarda la configuración en SharedPreferences. Se usa texto simple (ver [Codec]) para que un
  * valor dañado nunca impida abrir la pantalla de inicio: lo ilegible se ignora.
  */
-class SettingsStore(context: Context) {
+class SettingsStore(private val prefs: SharedPreferences) {
 
-    private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+    constructor(context: Context) : this(context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE))
 
     fun read(): LauncherSettings = try {
         LauncherSettings(
@@ -52,7 +66,16 @@ class SettingsStore(context: Context) {
             notifyNewApps = prefs.getBoolean(KEY_NOTIFY_NEW, true),
             onboardingDone = prefs.getBoolean(KEY_ONBOARDING, false),
             // getStringSet devuelve un set interno que no se debe modificar: se copia.
-            knownPackages = prefs.getStringSet(KEY_KNOWN, null)?.toSet().orEmpty()
+            knownPackages = prefs.getStringSet(KEY_KNOWN, null)?.toSet().orEmpty(),
+            fontId = prefs.getString(KEY_FONT, null) ?: AppearanceDefaults.FONT_ID,
+            accentId = prefs.getString(KEY_ACCENT, null) ?: AppearanceDefaults.ACCENT_ID,
+            titleText = prefs.getString(KEY_TITLE, null) ?: AppearanceDefaults.TITLE,
+            titleEffect = TitleEffect.fromId(prefs.getString(KEY_TITLE_EFFECT, null)),
+            folderSize = FolderSize.fromId(prefs.getString(KEY_FOLDER_SIZE, null)),
+            showDate = prefs.getBoolean(KEY_SHOW_DATE, true),
+            showDock = prefs.getBoolean(KEY_SHOW_DOCK, true),
+            folderNames = Codec.decodeMap(prefs.getString(KEY_FOLDER_NAMES, null)),
+            hiddenPackages = Codec.decodeIds(prefs.getString(KEY_HIDDEN, null)).toSet()
         ).sanitized()
     } catch (e: ClassCastException) {
         // Un valor guardado con otro tipo (versión antigua): se parte de cero en vez de cerrarse.
