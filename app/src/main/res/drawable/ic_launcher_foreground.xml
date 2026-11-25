@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ícono: cuatro cuadrados (carpetas ordenadas), dentro de la zona segura de 66dp. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/ordena_foreground"
+        android:pathData="M38,36h12a2,2 0,0 1,2 2v12a2,2 0,0 1,-2 2h-12a2,2 0,0 1,-2 -2v-12a2,2 0,0 1,2 -2z" />
+    <path
+        android:fillColor="@color/ordena_foreground"
+        android:fillAlpha="0.45"
+        android:pathData="M58,36h12a2,2 0,0 1,2 2v12a2,2 0,0 1,-2 2h-12a2,2 0,0 1,-2 -2v-12a2,2 0,0 1,2 -2z" />
+    <path
+        android:fillColor="@color/ordena_foreground"
+        android:fillAlpha="0.45"
+        android:pathData="M38,56h12a2,2 0,0 1,2 2v12a2,2 0,0 1,-2 2h-12a2,2 0,0 1,-2 -2v-12a2,2 0,0 1,2 -2z" />
+    <path
+        android:fillColor="@color/ordena_foreground"
+        android:pathData="M58,56h12a2,2 0,0 1,2 2v12a2,2 0,0 1,-2 2h-12a2,2 0,0 1,-2 -2v-12a2,2 0,0 1,2 -2z" />
+</vector>
