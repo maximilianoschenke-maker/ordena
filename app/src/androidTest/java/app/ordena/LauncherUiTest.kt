@@ -38,13 +38,14 @@ class LauncherUiTest {
 
     private var scenario: ActivityScenario<MainActivity>? = null
 
-    private fun start(onboardingDone: Boolean = true) {
+    private fun start(onboardingDone: Boolean = true, knownPackages: Set<String>? = null) {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
-        context.getSharedPreferences(SettingsStore.PREFS_NAME, Context.MODE_PRIVATE)
+        val editor = context.getSharedPreferences(SettingsStore.PREFS_NAME, Context.MODE_PRIVATE)
             .edit()
             .clear()
             .putBoolean(SettingsStore.KEY_ONBOARDING, onboardingDone)
-            .commit()
+        if (knownPackages != null) editor.putStringSet(SettingsStore.KEY_KNOWN, knownPackages)
+        editor.commit()
         scenario = ActivityScenario.launch(MainActivity::class.java)
         val readyTag = if (onboardingDone) "folder_grid" else "onboarding"
         compose.waitUntil(timeoutMillis = 20_000) {
@@ -128,6 +129,20 @@ class LauncherUiTest {
         compose.onNodeWithTag("search_input").performTextInput("sett")
         compose.waitForIdle()
         compose.onAllNodesWithText("Settings").onFirst().assertIsDisplayed()
+    }
+
+    @Test
+    fun avisaCuandoSeInstalaUnaAppNueva() {
+        // Ordena "recuerda" solo una app: todas las demás le parecen recién instaladas.
+        start(knownPackages = setOf("com.android.settings"))
+        compose.waitUntil(timeoutMillis = 10_000) {
+            compose.onAllNodesWithTag("new_app_banner").fetchSemanticsNodes().isNotEmpty()
+        }
+        compose.onNodeWithTag("new_app_banner").assertIsDisplayed()
+        compose.onNodeWithText("Listo").performClick()
+        compose.waitUntil(timeoutMillis = 5_000) {
+            compose.onAllNodesWithTag("new_app_banner").fetchSemanticsNodes().isEmpty()
+        }
     }
 
     @Test

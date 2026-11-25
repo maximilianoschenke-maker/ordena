@@ -36,11 +36,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -212,9 +212,11 @@ fun FolderTile(folder: Folder, onClick: () -> Unit, modifier: Modifier = Modifie
         1 -> "1 app"
         else -> "$count apps"
     }
+    // Con letra grande del sistema el recuadro crece (todos por igual, para que la grilla quede pareja).
+    val fontScale = LocalDensity.current.fontScale.coerceIn(1f, 1.6f)
     Column(
         modifier = modifier
-            .height(104.dp)
+            .height(104.dp * fontScale)
             .clip(RoundedCornerShape(22.dp))
             .background(Palette.Surface)
             .border(1.dp, Color(0xFF232323), RoundedCornerShape(22.dp))

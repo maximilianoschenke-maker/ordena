@@ -3,18 +3,15 @@ package app.ordena.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
@@ -32,11 +29,7 @@ fun FolderScreen(
 ) {
     Column(Modifier.fillMaxSize().padding(horizontal = 20.dp)) {
         Spacer(Modifier.height(16.dp))
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            RoundIconButton(UiIcons.BACK, "Volver al inicio", onBack, Modifier.testTag("back"))
-            Spacer(Modifier.width(14.dp))
-            CategoryIconBox(folder.iconPath, size = 44.dp)
-        }
+        RoundIconButton(UiIcons.BACK, "Volver al inicio", onBack, Modifier.testTag("back"))
         Spacer(Modifier.height(20.dp))
         ScreenTitle(folder.name, Modifier.testTag("folder_title"), size = 32)
         val count = folder.apps.size
