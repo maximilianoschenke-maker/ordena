@@ -18,23 +18,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v5
 
       - name: Pruebas unitarias (clasificador y categorías)
-        run: ./gradlew --no-daemon --stacktrace testDebugUnitTest
+        run: |
+          set -o pipefail
+          mkdir -p build-logs
+          ./gradlew --no-daemon --stacktrace testDebugUnitTest 2>&1 | tee build-logs/pruebas-unitarias.txt \
+            || { bash scripts/report-errors.sh build-logs/pruebas-unitarias.txt; exit 1; }
 
       - name: Compilar APKs
-        run: ./gradlew --no-daemon --stacktrace assembleDebug assembleRelease assembleDebugAndroidTest
+        run: |
+          set -o pipefail
+          ./gradlew --no-daemon --stacktrace assembleDebug assembleRelease assembleDebugAndroidTest 2>&1 | tee build-logs/compilacion.txt \
+            || { bash scripts/report-errors.sh build-logs/compilacion.txt; exit 1; }
 
       - name: Guardar APKs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: apks
           path: app/build/outputs/apk/**/*.apk
@@ -42,7 +49,7 @@ jobs:
 
       - name: Guardar reporte de pruebas unitarias
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: reporte-pruebas-unitarias
           path: app/build/reports/tests/
@@ -67,11 +74,30 @@ jobs:
 
       - name: Guardar capturas y registros del emulador
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: emulador
           path: device-output/
           if-no-files-found: ignore
+
+      - name: Dejar resultados en la rama ci-resultados
+        if: always() && github.event_name == 'push'
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/res && mkdir -p /tmp/res/test-results
+          cp -r device-output build-logs /tmp/res/ 2>/dev/null || true
+          cp -r app/build/test-results /tmp/res/test-results/unitarias 2>/dev/null || true
+          cp -r app/build/outputs/androidTest-results /tmp/res/test-results/interfaz 2>/dev/null || true
+          rm -f /tmp/res/device-output/ui.xml
+          echo "Compilación ${{ github.run_number }} · commit ${{ github.sha }} · estado ${{ job.status }}" > /tmp/res/INFO.txt
+          cd /tmp/res
+          git init -q -b ci-resultados
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Resultados de la compilación ${{ github.run_number }}"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}" ci-resultados
 
       - name: Publicar APK en Releases
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

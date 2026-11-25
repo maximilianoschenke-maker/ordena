@@ -45,7 +45,7 @@ for exact in (True, False):
 PY
 )
   if [ -z "$coords" ]; then
-    echo "No encontré «$label» en pantalla"
+    echo "No encontré «$label» en pantalla" | tee -a "$OUT/avisos.txt"
     return 1
   fi
   if [ "$mode" = "long" ]; then
@@ -58,8 +58,9 @@ PY
 }
 
 echo "::group::Pruebas de interfaz (debug)"
-if ! ./gradlew --no-daemon --stacktrace connectedDebugAndroidTest; then
+if ! ./gradlew --no-daemon --stacktrace connectedDebugAndroidTest 2>&1 | tee "$OUT/pruebas-interfaz.txt"; then
   echo "::error::Fallaron las pruebas de interfaz"
+  bash scripts/report-errors.sh "$OUT/pruebas-interfaz.txt"
   status=1
 fi
 cp -r app/build/reports/androidTests "$OUT/reporte-pruebas-interfaz" 2>/dev/null || true
