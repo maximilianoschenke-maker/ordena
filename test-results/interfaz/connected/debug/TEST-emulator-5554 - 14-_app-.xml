@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="app.ordena.LauncherUiTest" tests="9" failures="0" errors="0" skipped="0" time="45.24" timestamp="2026-11-25T21:28:47" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 14" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="moverUnaAppDeCarpeta" classname="app.ordena.LauncherUiTest" time="9.061" />
+  <testcase name="renombrarYReordenarCarpetas" classname="app.ordena.LauncherUiTest" time="6.324" />
+  <testcase name="bienvenidaLlevaAlInicio" classname="app.ordena.LauncherUiTest" time="2.961" />
+  <testcase name="inicioMuestraCarpetaHerramientas" classname="app.ordena.LauncherUiTest" time="2.112" />
+  <testcase name="personalizarTipografiaTituloYEfecto" classname="app.ordena.LauncherUiTest" time="5.271" />
+  <testcase name="categoriasEntiendenLoQueSeEscribe" classname="app.ordena.LauncherUiTest" time="6.237" />
+  <testcase name="avisaCuandoSeInstalaUnaAppNueva" classname="app.ordena.LauncherUiTest" time="2.301" />
+  <testcase name="busquedaEntiendeCategoriasYApps" classname="app.ordena.LauncherUiTest" time="4.284" />
+  <testcase name="ocultarYVolverAMostrarUnaApp" classname="app.ordena.LauncherUiTest" time="4.971" />
+</testsuite>

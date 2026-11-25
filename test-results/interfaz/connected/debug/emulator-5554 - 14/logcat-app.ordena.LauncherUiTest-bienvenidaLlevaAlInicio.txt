@@ -1,0 +1,592 @@
+11-25 21:28:17.777  4628  4685 I TestRunner: started: bienvenidaLlevaAlInicio(app.ordena.LauncherUiTest)
+11-25 21:28:17.782  3193  5051 D TrafficStats: tagSocket(126) with statsTag=0x1809, statsUid=-1
+11-25 21:28:17.784  3193  5051 D TrafficStats: tagSocket(126) with statsTag=0x1809, statsUid=-1
+11-25 21:28:17.787  4193  4193 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.instantapps.START pkg=com.google.android.gms }
+11-25 21:28:17.790  4628  4685 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@b3472d5]
+11-25 21:28:17.802  4628  4685 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-25 21:28:17.811  4193  4485 I FontLog : Pulling font file for id = 6, cache size = 6 [CONTEXT service_id=132 ]
+11-25 21:28:17.861  1460  4141 I Checkin : [CheckinOperation] Starting Checkin: Default Task Reason : 1 Force : false UserId : 0 Start time : 77020
+11-25 21:28:17.871  1550  1811 I EmojiSlicingStrategy: EmojiSlicingStrategy.matchEnabledLocalesWithPackLocales():127 matchEnabledLocalesWithPackLocales() : User enabled 1 locales; returning 1 slices
+11-25 21:28:17.875  1550  1811 I SP      : Syncing bundled_emoji (20190807) with slices: [{7b9ddb0b8c001e17cee03b1edf554b20, m:*:*:*}], metadata: false
+11-25 21:28:17.905  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@9637faf in: PRE_ON_CREATE
+11-25 21:28:17.906  4628  4628 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-25 21:28:17.908   826   884 D SplashScreenView: Build android.window.SplashScreenView{947f005 V.E...... ......ID 0,0-0,0}
+11-25 21:28:17.908   826   884 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-25 21:28:17.908   826   884 D SplashScreenView: Branding: view: android.view.View{7a0e85a G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-25 21:28:17.908  1460  4141 I CheckinUtil: Classify the device as Phone. [CONTEXT service_id=130 ]
+11-25 21:28:17.929  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@9637faf in: CREATED
+11-25 21:28:17.930  4628  4628 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=app.ordena.MainActivity@9637faf
+11-25 21:28:17.935  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@9637faf in: STARTED
+11-25 21:28:17.936  4628  4628 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=app.ordena.MainActivity@9637faf
+11-25 21:28:17.939  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@9637faf in: RESUMED
+11-25 21:28:17.941  4628  4628 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=app.ordena.MainActivity@9637faf
+11-25 21:28:17.958   524   914 D WifiNl80211Manager: Scan result ready event
+11-25 21:28:17.958   524   914 D WifiNative: Scan result ready event
+11-25 21:28:17.987  3103  3320 I A       : group apa_head_suggest not present without account in *
+11-25 21:28:18.029  3103  3305 I A       : incrementApaDataDownloadStoreStatus(latency = PT0.227S, appVersion = 13.17.16.23, status = NOT_FOUND, locale = *, fileGroupnames = apa_head_suggest, accountScoped = false, localGroupsAvailable = false, timeSinceSearchBoot = Optional[PT39.547S] (THIRTY_SECONDS_TO_ONE_MINUTE), timeSinceDataDownloadInit = PT24.616S (TEN_SECONDS_TO_THIRTY_SECONDS))
+11-25 21:28:18.029  3103  3305 I A       : incrementApaDataDownloadStoreStatusNotFound(appVersion = 13.17.16.23, locale = *, groupName = apa_head_suggest, accountScoped = false, foundGroups = 0, status = 0, localGroupsAvailable = false)
+11-25 21:28:18.038  4628  4628 D AutofillManager: Fill dialog is enabled:false, hints=[]
+11-25 21:28:18.105   524   544 W system_server: Long monitor contention with owner binder:524_15 (2147) at boolean com.android.server.am.ActivityManagerService.unbindService(android.app.IServiceConnection)(ActivityManagerService.java:13426) waiters=0 in void com.android.server.am.ProcessRecord.updateProcessInfo(boolean, boolean, boolean) for 195ms
+11-25 21:28:18.113   524   538 W system_server: Long monitor contention with owner binder:524_15 (2147) at boolean com.android.server.am.ActivityManagerService.unbindService(android.app.IServiceConnection)(ActivityManagerService.java:13426) waiters=1 in void com.android.server.am.ContentProviderHelper.removeContentProvider(android.os.IBinder, boolean) for 196ms
+11-25 21:28:18.120  4193  4292 I TapAndPay: Disabling TapAndPay HCE service [CONTEXT service_id=79 ]
+11-25 21:28:18.143  4272  4272 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_EXECUTE_QUEUED_FixupMessageStatusOnStartupAction elapsedRealTime: 77302 currentTimeMillis: 1795642098143
+11-25 21:28:18.143  4272  4272 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_EXECUTE_QUEUED_ProcessPendingMessagesAction elapsedRealTime: 77302 currentTimeMillis: 1795642098143
+11-25 21:28:18.149  4272  4448 I BugleDataModel: FixupMessageStatusOnStartupAction: sendFailedCnt: 0, downloadFailedCnt: 0, partsProcessingFailedCnt: 0
+11-25 21:28:18.158  4272  4448 I BugleDataModel: PendingMessagesProcessor: process from FixupMessageStatusOnStartupAction due to connectivity changed with delay 0 with queues:
+11-25 21:28:18.159  1074  1074 D SearchTargetUtil:  query= size=15
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=christian music industry,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=christian music industry searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 9276ee15-3477-4c68-b739-c454ddc01ce7
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=divorced parents share a cruise cabin,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=divorced parents share a cruise cabin searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 0c3d421e-9d67-469f-b245-7ce680703b6b
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=today wordle hints,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=today wordle hints searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: de4a0a03-ce05-46ae-8b48-3e8df5710f27
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=quinn hughes injury update,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=quinn hughes injury update searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 7368bdd0-edb0-4158-9fb1-ed2ca2421b1e
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=mathematics riemann hypothesis,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=mathematics riemann hypothesis searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: ce690260-7f08-47a8-aaf9-d7aa758762d5
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=extra_tall_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{bitmap_url=data:image/jpeg;base64,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
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=tennessee elections,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=tennessee elections searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 5130e702-e648-4c1c-bcd0-1cc5406e63fd
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=college football playoff bracket,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=college football playoff bracket searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 04a9f153-c951-48c4-8aa5-7a021c67535f
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=wendys class action lawsuit,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=wendys class action lawsuit searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 922cdda8-56d0-47c4-8922-2696597d6637
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=black friday ssd deals 1tb 2tb,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=black friday ssd deals 1tb 2tb searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 92b2abab-e44f-44f9-a2c0-dcc38baf83ad
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=nyt strands hints,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=nyt strands hints searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 441d0bd1-a4d5-42bc-b139-920894da91a4
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=extra_tall_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{bitmap_url=data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHwAfAMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAGAAQFBwEDCAL/xAA6EAACAQMCAwUGBAUDBQAAAAABAgMABBEFIQYSMRMiQVFhB3GBobHwFDKRwRVCUtHxYnLhI1OCkqL/xAAZAQADAQEBAAAAAAAAAAAAAAACAwQBAAX/xAAhEQADAAICAgMBAQAAAAAAAAAAAQIDERIhMUEiMlETBP/aAAwDAQACEQMRAD8AskVmsVmiZgqw7pGjPI6oijJZjgCs5qtfaVxfDG0enafJHM0TdpI64ZVkB7o8QcdenXFC3o1LYVavxpoelwGRrxZ3IykcA5i/uPT50DXvtTvJOc20CW5B7icgcH/cSfoPjVe399dXs7T3NxJJKerMSx29aa8zA7lm+tDsNJFr6Z7WCSqajpnN5vbPj/5b+9Eml+0Ph6/ZUeeS0dvC4QAD4gkVRHaYAJwy+o2rYCrDu+H8reHxrts3gmdOQTRzxLLDIkkbDKujAgj0Ne6ojhHjHUOHCIIwJ7FzkwSH8pPUqR0Pyq6dE1a01vTo72xfMbZBUkcyMOoOOh+/GiT2LqWh9SpVmtBMUqVKuOFSpUq4481k1ihL2ma82jcPtDASLi9zCjD+Vcd4+/GP1rG9IJLb0CfHvHctxPJp+i3DR2sfdlmUYaVvJT/T9ar6CGSeUAbAmtYOXx1A3J9amLKLlwcb0m6a7KIhU9Dqz0qFU7y5J608l0S2mhYCHBP8y9RT2xgMmPKp+zshgZqXnTZYscpeCsNW0ibTX5ypa3Y7P5e/1+tMVHKSm2OmM+H/AB1FW/qGlR3NpLFIuUdSCDVTXsLW100TdUblJ9x+/wBaoxZOXTJ8uNT2jWGwWD45S2/399KKuBuKJeGdSxcEvYT4WYDqvkw9R9+FChGwyO6RynPy+dbISJFUPnY4+NNE630dPAhgCOhGRWaHeAtWbVuG4JJW5poD2Ejf1Feh+IIoio12hDWnoVKlSrTBUqVKuNPFUz7Y78T8S21p1W1g3H+pu99MVcw6+HxrmzivUP4rxJqN+ueSaVimf6R3R8gKyg5GtgrSyBVXLE594oghAQqGKr/uOKa8FRD8dNNJjlji6+WT/bNSMhsZb9jIqvk91m8PQCkZF0UYgn0i35o+YEEY8N6n7ZUVdiKEbfTZbXkaykeIOMquCA3uz1qY025e4ZlQsWTZgeufGo2uJbL5E3KsZhy0iqD4scCqp40tYotUZ4pUcSjJ5fMdflRZqdxBHMZbuQiNMbM3dqL4iu9N1DSStsYe1iYOnIB+hx5g03H+isnjQEIQ4UE7nKN7xv8AQmkCed8+IDH9/nXle5N02O494/4+tbyAGb0H39KqJC0/Y7eR51G0LjtG5ZQvmBsT9Ksyue+C9Rn0zXrK4tk7R1k7Now2DIp2K/P9QK6CikWWJJEzyuoYZGNjRz40KyLvZ6pUqVEAYrNKlXHEbrl2LDRb67bPLDbu5x7q5ilBQ4brjBzXRPtCbl4L1bfHNDyk58CwBrne9laWV5W6sc0LCnwFXDyL/Brhh1knCt7go/vXkaFcXVxzRv3AdhnG36154OftrOa2J6Sggn3UVaKUEzeWcVLmpx2XYYWRaPGi8Nm0hJkubjHVv+ocfXHyp/oUnZXdzKXPfBGSOvrWOItXjt4o4VIVXbvN5CtXDuoac0so5xMnKcYbGDU9VVdlMTM9DnUNHi1AibKlscpVgCPfjpmoq54GtZLcCGR4nXxBqaXULdi406QyTJuyMhx8+tP9N1m1uYjzQ4Y7bHpXTkpLRzxzT2yn9ZsWsrySHJ7uQM9c4rSozyt/3EwPv9aN+MrGGUG4jXD8wOfTcfvQXgAiI9UHN8/81XivlJJlx8aN2jTdjf2k7Hl5Jo5GP9IB3NdMe7pXNuhWpv8AU47Yrnti8e5xuRt8zXQ2jSrNpFjIjMytboQW6nujrToJsnhDylSrNGKMUqzWK44FvaPAZ+CtUAbl5IxJ068pBx8cVzxco0bMsgwynBHljNdK8V78O3ychcSIIyPRiFz8M5+Fc+8UWTWWoyROxZmSORz4lnQO3zahfkOfBu4YcxPcR55JQFkAPp/kUQ6VdS87CNCSWzQZDPLBqJuweZTksfMEbj78qK9HvFin50IKsc1PnnaKf89d6M3Oo9td9g8RllY7KBU1oOlyyTLL/BZWXIHOFGQT4b1FX16bPUVuYQcKQwI6r40ZcP8AF1w9qO1nt35CGUmIhjjYZ3pSSK55Px2eJhf27s8OlXKoBv3QT8vdUETLLcLeaerqsjESLIhXcdSBRVqmv3N2wjtLsnmJJWJQAuc9Tj16fWo27xCsUY35V3Pn50ukl4C79kTq/M1lI0v8q5NV/wBrv2w3YQqd9/vxor401ERad+GRh21xt16L4/2oPtmXkZWGeVADjxGafgnU7Jc9brQR8It2XE1g4VSv4tNmGRvgdPcTXQkUSQRrFEgREGFVRsBVFez2J34p0sInaYkyxxnlwDv9+dXvVMEuXyjNKsVmjEmKVKlXGmoHG9c/e0XTBpnEEtqZu1IiRg2DnGMAH1AUD4Ve+pX0GmWE97dNywwoXYjr7h6npVB8X6k+qTxyzx4vJAZZ5MYBDY5EXP8AKqjHkTk79aFsOECcmw28RUnp94sTCMc3Lyj83njf55pgy5YeecilAh5yKGltGy2qC6xmjnlEc7bHYE0Uadolsd2zsfA1W6SSx4O+B0IqcsuJbuBAgJY9NxUtw/RbjyL2WXFaWtlFzIQFA86G9V1JAzEHLeA86gjquoXgxkhT8Ke2ensFM1ySx8M0Cj9GO9+AQ4keSW9V5Dk8n6b0ygHLCXHXH74/epXiWIrqSnHdZMfoTUXEx5sN1bKn9asj6ohv7stb2PSW8d7PzKO2kUxKx8x3sfEZ/wDWrXrnThTVLzT72JrIc8sjoRHjdsNty+p3H/ka6HtbiK7t47i3cPFIOZSD4UcsXa9mylSpUQsVKlSrjSm+L+MbDUtZNtP2l7pltIGSK25eWbAG5JPixI8cAbbnIBNYvn1DUbq7lRUa6k58L0XPgPQD6UR69pUv4Pto0je4mHaGG2TuxoAN9ttsrtjG9C8tu8cnLKGVsbhuvpSZub+o/TlbaGZBJXYdfCnVvDzTjHlXkJmQeQqS0bH8SiVgpV8oQ3jnw9D0plL4gT9jdDb77janSaevNzBB8Kln03smDR7qfyn0qQhsY5Isk4PuqN2XzAxsYlXHdGfdUhjm2rfb6cC2AdvQVJRWKqBnYY3ZugFDvYzWkAHFltyLBMRjMnIP0z+3zFD3Z5cco3z9/Sibjy9hm1KGzt/yWy7+8/vQ6Ou9V4l8Dz8rX9DFvOY5I+QYKZCPzYIOc5+FX5w1xRpGowKsIe1kc8zCZOVWc9cN03O9UIyAsCfA5qx+HIotY0EPClqBaFY7i22RsY/OpPXp456HcUTTns2eFJ8y2qVV/balJptjCbK9fnkAaK1lYM3L4hwWwuPQjHrUppXF81xOLW905o7gnA5G2b3Z2z02zQf3j2JmG/AWUq8QyGSMMUaMk/lbGa901NNbQPsDOLbXTNF4bluo7VTJCSqMhx3mOcH0LBfsEVSEsjyM8rBnZmJYgdSauriiyjvbF9ImeT8MbhpCQe9lVLAZPhmhbjlk4UEGl6PbwRxsA/augaTr0JOxHvBPrUf+b4zr2UXu
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=barcelona champions league,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=barcelona champions league searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: b836aa99-769c-48a4-9488-d8763e1daed9
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=target black friday deals,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=target black friday deals searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 4fbd61e7-f2cb-4bb8-a58b-ad247a20bc47
+11-25 21:28:18.160  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=vitamin k deficiency bleeding,group_id=web33701,response_id=262ad56e-36c0-4eda-b229-179bfcf4c31b,support_query_builder=false,} searchAction=vitamin k deficiency bleeding searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: d0692219-9752-48b0-a0ff-c3f2d9b0d8f7
+11-25 21:28:18.161  1460  4882 W Pay     : Active account was null, notification task will be cancelled. [CONTEXT service_id=198 ]
+11-25 21:28:18.161  1460  4882 W Pay     : [eMoney card recovery task] exiting without init: active tapandpay account not found! [CONTEXT service_id=198 ]
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel sms_send
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel mms_send
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel mms_download
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel rcs_send
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel rcs_ft_upload
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel rcs_ft_download
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel cloud_sync_send
+11-25 21:28:18.166  4272  4448 I BugleDataModel: ProcessPendingMessagesTimers: cleared next retry time for channel cloud_sync_attachment_download
+11-25 21:28:18.169  4272  4448 I BugleDataModel: PendingMessagesProcessor: process from ProcessPendingMessagesAction due to scheduled processing with delay 0 with queues:
+11-25 21:28:18.177   826   882 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@5b2f784
+11-25 21:28:18.184   524  2527 W InputManager-JNI: Input channel object '15ab249 Splash Screen app.ordena.test (client)' was disposed without first being removed with the input manager!
+11-25 21:28:18.188  4193  4212 I .gms.persistent: Background concurrent copying GC freed 322447(14MB) AllocSpace objects, 11(468KB) LOS objects, 49% free, 13MB/27MB, paused 14.748ms,36us total 1.336s
+11-25 21:28:18.203  4628  4628 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-25 21:28:18.203  4628  4628 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-25 21:28:18.215  4193  4292 I TapAndPay: Disabling TapAndPay HCE service [CONTEXT service_id=79 ]
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: Retrieving snapshot for com.google.android.gms.playlog.uploader failed
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at cfsz.o(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at bwch.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at bwch.j(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at bwch.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at com.google.android.gms.clearcut.init.ClearcutInitChimeraIntentService.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):5)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at zdm.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at com.google.android.gms.clearcut.init.DefaultPriorityClearcutInitChimeraIntentService.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at zhv.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at hjm.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at hjl.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):11)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-25 21:28:18.228  1460  4883 E PhenotypeFlagCommitter: 	at java.lang.Thread.run(Thread.java:1012)
+11-25 21:28:18.339  1460  4882 W Pay     : Active account was null, notification task will be cancelled. [CONTEXT service_id=198 ]
+11-25 21:28:18.340  1460  4882 W Pay     : [eMoney txn sync] exiting without init: active tapandpay account not found! [CONTEXT service_id=198 ]
+11-25 21:28:18.361  1460  4141 I Checkin : [AndroidCheckinProtoModule] Checkin reason type: 1 attempt count: 1.
+11-25 21:28:18.376  4193  4855 I Nearby  : [MBleClient] Start ble scanning from NearbyDirect:BluetoothAdapterWrapper, context tag = nearby_messages [CONTEXT service_id=49 ]
+11-25 21:28:18.377  4193  4855 D BluetoothAdapter: isLeEnabled(): ON
+11-25 21:28:18.378  1020  1040 D BtGatt.GattService: stopScan() - queue size =2
+11-25 21:28:18.379  1020  1304 D BtGatt.ScanManager: handling stopping scan  [ScanClient scanModeApp -1 scanModeUsed -1 [appScanStats com.google.uid.shared:10131]]
+11-25 21:28:18.379  1020  1304 D BtGatt.ScanManager: stop gattClientScanNative
+11-25 21:28:18.379  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer stopped
+11-25 21:28:18.379  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:588 stop_scan: Scanning already stopped, return!
+11-25 21:28:18.379  1020  1304 W bt_shim_scanner: packages/modules/Bluetooth/system/main/shim/le_scanning_manager.cc:190 Scan: Invalid state: start:0, current scan state: 0
+11-25 21:28:18.380  1020  1304 W BtGatt.ScanManager: There is no scan radio to stop
+11-25 21:28:18.380  1020  1040 D ActivityAttributionService: notifyActivityAttributionInfo UID=1002 packageName=com.google.android.bluetooth deviceAddress=no_active_device_address
+11-25 21:28:18.380  1020  1040 I bt_btif : packages/modules/Bluetooth/system/btif/src/bluetooth.cc:829 get_profile_interface: get_profile_interface: id = activity_attribution
+11-25 21:28:18.380  1020  1040 D BtGatt.GattService: unregisterScanner() - scannerId=2
+11-25 21:28:18.381  1020  1040 I bt_stack: [INFO:le_scanning_manager.cc(162)] Unregister in shim layer, scanner_id:2
+11-25 21:28:18.381  4193  4855 I Nearby  : [MBleClient] M hardware scan: 1 clients, scanMode= LOW_LATENCY, filters size = 5 [CONTEXT service_id=49 ]
+11-25 21:28:18.381  4193  4855 D BluetoothAdapter: isLeEnabled(): ON
+11-25 21:28:18.382  1020  1040 D BtGatt.GattService: registerScanner() - UUID=de665d29-58e3-499f-ad00-6bb8910fbe56
+11-25 21:28:18.382  1020  1040 I bt_stack: [INFO:le_scanning_manager.cc(155)] RegisterScanner in shim layer
+11-25 21:28:18.383  1020  1196 D BtGatt.GattService: onScannerRegistered() - UUID=de665d29-58e3-499f-ad00-6bb8910fbe56, scannerId=2, status=0
+11-25 21:28:18.383  4193  4485 D BluetoothLeScanner: onScannerRegistered() - status=0 scannerId=2 mScannerId=0
+11-25 21:28:18.383  1020  1040 D BtGatt.GattService: start scan with filters
+11-25 21:28:18.397  1460  4882 I Pay     : Requested check of feature migrations. [CONTEXT service_id=198 ]
+11-25 21:28:18.383  1020  1040 D BtGatt.GattService: enforcePrivilegedPermissionIfNeeded([BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=224, mManufacturerData=[0, 0, 0], mManufacturerDataMask=[0, 0, -1], mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000fef3-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000feaa-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000fea0-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=76, mManufacturerData=[2, 21], mManufacturerDataMask=[-1, -1], mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null]])
+11-25 21:28:18.409  1020  1040 D BtGatt.ScanManager: startScan()  [ScanClient scanModeApp 2 scanModeUsed 2 [appScanStats com.google.uid.shared:10131]]
+11-25 21:28:18.409  1020  1040 D ActivityAttributionService: notifyActivityAttributionInfo UID=1002 packageName=com.google.android.bluetooth deviceAddress=no_active_device_address
+11-25 21:28:18.409  1020  1040 I bt_btif : packages/modules/Bluetooth/system/btif/src/bluetooth.cc:829 get_profile_interface: get_profile_interface: id = activity_attribution
+11-25 21:28:18.414  1460  4883 W PeoplePU: getComponentEnabledSetting failed.
+11-25 21:28:18.414  1460  4883 W PeoplePU: java.lang.IllegalArgumentException: Unknown component: ComponentInfo{com.google.android.syncadapters.contacts/com.google.android.syncadapters.contacts.ProxyGalProvider}
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3061)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at android.os.Parcel.createException(Parcel.java:3041)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at android.os.Parcel.readException(Parcel.java:3024)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at android.os.Parcel.readException(Parcel.java:2966)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at android.content.pm.IPackageManager$Stub$Proxy.getComponentEnabledSetting(IPackageManager.java:6034)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at android.app.ApplicationPackageManager.getComponentEnabledSetting(ApplicationPackageManager.java:3097)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at bvox.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at buru.a(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at com.google.android.gms.people.api.init.PeopleModuleInitIntentOperation.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):5)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at zdm.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at zhv.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at hjm.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at hjl.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):11)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at java.lang.Thread.run(Thread.java:1012)
+11-25 21:28:18.414  1460  4883 W PeoplePU: Caused by: android.os.RemoteException: Remote stack trace:
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at com.android.server.pm.ComputerEngine.getComponentEnabledSettingInternal(ComputerEngine.java:5159)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at com.android.server.pm.ComputerEngine.getComponentEnabledSetting(ComputerEngine.java:5141)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at com.android.server.pm.IPackageManagerBase.getComponentEnabledSetting(IPackageManagerBase.java:388)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at android.content.pm.IPackageManager$Stub.onTransact(IPackageManager.java:3012)
+11-25 21:28:18.414  1460  4883 W PeoplePU: 	at com.android.server.pm.PackageManagerService$IPackageManagerImpl.onTransact(PackageManagerService.java:6334)
+11-25 21:28:18.414  1460  4883 W PeoplePU:
+11-25 21:28:18.415  1020  1304 D BtGatt.ScanManager: handling starting scan
+11-25 21:28:18.416  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(268)] ScanFilterEnable in shim layer
+11-25 21:28:18.423  1020  1196 D BtGatt.GattService: onScanFilterEnableDisabled() - clientIf=2, status=0, action=1
+11-25 21:28:18.423  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.439  1460  4882 I Pay     : Requested immediate check to see whether to show pay module downloading complete notification. [CONTEXT service_id=198 ]
+11-25 21:28:18.462  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+11-25 21:28:18.463  1020  1196 D BtGatt.GattService: onScanFilterConfig() - clientIf=2, action = 0 status = 0, filterType=0, availableSpace=0
+11-25 21:28:18.463  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.464  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+11-25 21:28:18.476  1020  1304 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+11-25 21:28:18.476  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-25 21:28:18.484  1020  1196 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-25 21:28:18.488  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.490  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+11-25 21:28:18.492   524  2147 I RemoteProvisionSysSvc: getRegistration(android.hardware.security.keymint.IRemotelyProvisionedComponent/default)
+11-25 21:28:18.494  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+11-25 21:28:18.494  1020  1196 D BtGatt.GattService: onScanFilterConfig() - clientIf=2, action = 0 status = 0, filterType=0, availableSpace=0
+11-25 21:28:18.501  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.503  1020  1304 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+11-25 21:28:18.503  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-25 21:28:18.503  1020  1196 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-25 21:28:18.503  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.503  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+11-25 21:28:18.503  1020  1196 D BtGatt.GattService: onScanFilterConfig() - clientIf=2, action = 0 status = 0, filterType=0, availableSpace=0
+11-25 21:28:18.503  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.504  1020  1304 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+11-25 21:28:18.504  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-25 21:28:18.504  1020  1196 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-25 21:28:18.504  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.505  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+11-25 21:28:18.505  1020  1196 D BtGatt.GattService: onScanFilterConfig() - clientIf=2, action = 0 status = 0, filterType=0, availableSpace=0
+11-25 21:28:18.505  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.506  1020  1304 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+11-25 21:28:18.506  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-25 21:28:18.506  1020  1196 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-25 21:28:18.506  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.506  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(243)] ScanFilterAdd in shim layer
+11-25 21:28:18.506  1020  1196 D BtGatt.GattService: onScanFilterConfig() - clientIf=2, action = 0 status = 0, filterType=0, availableSpace=0
+11-25 21:28:18.506  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.506  1020  1304 D BtGatt.ScanManager: configureFilterParamter 500 10000 1 0
+11-25 21:28:18.506  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-25 21:28:18.506  1020  1196 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-25 21:28:18.506  1020  1196 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-25 21:28:18.507  1020  1304 D BtGatt.ScanManager: start gattClientScanNative from startRegularScan()
+11-25 21:28:18.507  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer started
+11-25 21:28:18.507  1020  1304 D BtGatt.ScanManager: configureRegularScanParams() - queue=2
+11-25 21:28:18.509  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer stopped
+11-25 21:28:18.510  1020  1304 D BtGatt.ScanManager: Start gattClientScanNative with old scanMode -1 new scanMode 2 ( in MS: 100 / 100, in scan unit: 160 / 160 ) [ScanClient scanModeApp 2 scanModeUsed 2 [appScanStats com.google.uid.shared:10131]]
+11-25 21:28:18.510  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(346)] SetScanParameters in shim layer
+11-25 21:28:18.510  1020  1304 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer started
+11-25 21:28:18.510   524   524 I RegistrationProxy: onServiceConnected: com.android.rkpdapp.service.RemoteProvisioningService
+11-25 21:28:18.511  1020  1304 D BtGatt.ScanManager: apply scan timeout (600000)to scannerId 2
+11-25 21:28:18.512  1460  4887 W PeoplePU: getServiceInfo failed.
+11-25 21:28:18.512  1460  4887 W PeoplePU: android.content.pm.PackageManager$NameNotFoundException: ComponentInfo{com.google.android.gms/com.google.android.gms.people.sync.focus.ContactsSyncAdapterService}
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at android.app.ApplicationPackageManager.getServiceInfo(ApplicationPackageManager.java:616)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at android.app.ApplicationPackageManager.getServiceInfo(ApplicationPackageManager.java:599)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at bvox.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at com.google.android.gms.people.sync.focus.ContactsSyncIntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):43)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at zhv.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at hjm.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at hjl.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):11)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-25 21:28:18.512  1460  4887 W PeoplePU: 	at java.lang.Thread.run(Thread.java:1012)
+11-25 21:28:18.512  1460  4887 I FSA2_ContactsSyncIntentOp: Sync is disabled. Skip prepareToSync
+11-25 21:28:18.516  1460  4882 W ChimeraUtils: Module com.google.android.gms.phonesky_recovery missing resource null(0)
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:588 stop_scan: Scanning already stopped, return!
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:175 register_client: Scheduled address rotation for first client registered
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:178 register_client: Client registered
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:193 unregister_client: Client unregistered
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:197 unregister_client: Cancelled address rotation alarm
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:588 stop_scan: Scanning already stopped, return!
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:175 register_client: Scheduled address rotation for first client registered
+11-25 21:28:18.516  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:178 register_client: Client registered
+11-25 21:28:18.517  1020  1196 D BtGatt.GattService: onScanParamSetupCompleted : 0
+11-25 21:28:18.519  1460  4882 I SnapshotHandler: Unable to retrieve flag snapshot for com.google.android.gms.phonesky_recovery, using defaults.
+11-25 21:28:18.521   524   911 I RegistrationProxy: IGetRegistrationCallback.onSuccess
+11-25 21:28:18.522  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+11-25 21:28:18.524   524  2651 I RemoteProvisionSysSvc: Fetching key 10131 for client 127366821
+11-25 21:28:18.524   524  2651 I RegistrationProxy: getKeyAsync operation started with callback 172096122
+11-25 21:28:18.524  3826  3899 I RkpdRegistrationBinder: Key requested for : android.hardware.security.keymint.IRemotelyProvisionedComponent/default, clientUid: 1017, keyId: 10131, callback: 163774910
+11-25 21:28:18.525  3826  3899 I RkpdRegistrationBinder: Key successfully assigned to client
+11-25 21:28:18.526   524   524 I RemoteProvisionSysSvc: Successfully fetched key for client 127366821
+11-25 21:28:18.535  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+11-25 21:28:18.537  1460  1460 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-25 21:28:18.537  1460  1460 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-25 21:28:18.540  1020  1178 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_scanning_manager.cc:1369 on_advertising_filter_complete: Got a Command complete LE_ADV_FILTER, status UNKNOWN_CONNECTION
+11-25 21:28:18.542  1460  4883 I PeopleGalProvider: Gal directories started.
+11-25 21:28:18.543  1460  4883 I PeopleGalProvider: Method 1 completed.
+11-25 21:28:18.543  1460  4883 I PeopleGalProvider: Method 1 finished successfully.
+11-25 21:28:18.545  1550  1811 I SP      : Syncing next-word-predictor (20210507) with slices: [tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be], metadata: false
+11-25 21:28:18.551  1460  4883 I GalProviderController: setting component enabled=1 for com.google.android.gms.people.service.galprovider.PeopleGalProvider
+11-25 21:28:18.552  1460  4883 I GalProviderController: Setting component enabled succeeds.
+11-25 21:28:18.555  1460  4883 I PeopleGalProvider: Gal directories started.
+11-25 21:28:18.555  1460  4883 I PeopleGalProvider: Method 1 completed.
+11-25 21:28:18.555  1460  4883 I PeopleGalProvider: Method 1 finished successfully.
+11-25 21:28:18.562  1020  1020 D BluetoothPbapService:  onChange on contact uri
+11-25 21:28:18.573  4993  4993 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@e2e608
+11-25 21:28:18.587   524  2147 W InputManager-JNI: Input channel object '52c1ab2 app.ordena.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+11-25 21:28:18.611  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-25 21:28:18.611  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode 2
+11-25 21:28:18.612  1460  1460 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-25 21:28:18.616  1550  4098 I FetchBundledResourceTask: FetchBundledResourceTask.execute():64 Successfully copied file from /data/user/0/com.google.android.inputmethod.latin/files/emoji_search_en_us.zip to /data/user/0/com.google.android.inputmethod.latin/files/superpacks/bundled_emoji/7b9ddb0b8c001e17cee03b1edf554b20.zip.fetched.
+11-25 21:28:18.636  1460  1460 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-25 21:28:18.636  1460  1460 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-25 21:28:18.651   826   882 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@7efb214
+11-25 21:28:18.652   524   541 W ziparchive: Unable to open '/data/app/~~aKKbusIOvknXYbT45AVPlA==/app.ordena-3izWywYA2B4t-muqT-uIEA==/base.dm': No such file or directory
+11-25 21:28:18.655  1074  2061 D OneSearchSuggestProvider: Shut down the binder channel
+11-25 21:28:18.655  1074  1113 I IPCThreadState: oneway function results for code 2 on binder at 0x75e7320a2f50 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-25 21:28:18.672  3103  3470 W SearchServiceCore: Abort, client detached.
+11-25 21:28:18.677   524   593 I ImeTracker: app.ordena:911e1602: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-25 21:28:18.678   524   593 I ImeTracker: app.ordena:911e1602: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-25 21:28:18.678  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-25 21:28:18.689  1074  1129 I ImeTracker: com.google.android.apps.nexuslauncher:70703c9d: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-25 21:28:18.691  1074  1129 I ImeTracker: com.google.android.apps.nexuslauncher:70703c9d: onFailed at PHASE_CLIENT_VIEW_SERVED
+11-25 21:28:18.693  3103  3524 I PBSessionCacheImpl: Deleted sessionId[13648933966015430] from persistence.
+11-25 21:28:18.742  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-25 21:28:18.742  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=app.ordena fieldId=0 fieldName=null extras=null}, false)
+11-25 21:28:18.743  3193  5051 W SystemServiceRegistry: No service published for: persistent_data_block
+11-25 21:28:18.744   524  1726 W InputManager-JNI: Input channel object '9d4b46a Splash Screen app.ordena (client)' was disposed without first being removed with the input manager!
+11-25 21:28:18.743  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-25 21:28:18.755  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-25 21:28:18.776  1460  1460 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+11-25 21:28:18.781   524   541 I ActivityTaskManager: Displayed app.ordena/.MainActivity for user 0: +742ms
+11-25 21:28:18.785  1020  5198 D BluetoothPbapUtils: primaryVersionCounter = 0, secondaryVersionCounter=0
+11-25 21:28:18.793  1460  4882 I SnapshotHandler: Unable to retrieve flag snapshot for com.google.android.gms.vision, using defaults.
+11-25 21:28:18.799  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gass.chimera.SchedulePeriodicTasksService started execution. cause:5 exec_start_elapsed_seconds: 77 [CONTEXT service_id=218 ]
+11-25 21:28:18.801  1460  4883 I DeletedNullContactsCleanup: Scheduling the service.
+11-25 21:28:18.802  4272  4272 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_EXECUTE_QUEUED_GenericWorkerQueueAction elapsedRealTime: 77961 currentTimeMillis: 1795642098802
+11-25 21:28:18.802  4272  4448 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_BACKGROUND_QUEUED_GenericWorkerQueueAction elapsedRealTime: 77961 currentTimeMillis: 1795642098802
+11-25 21:28:18.807  4272  4402 I BugleJobs: GenericWorkerQueueAction: Work found
+11-25 21:28:18.808  3193  5051 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+11-25 21:28:18.809  3193  5051 W libc    : Access denied finding property "service.adb.tls.port"
+11-25 21:28:18.817  1460  4887 I GmsDebugLogger: [53] +mlkit.barcode.ui:0
+11-25 21:28:18.805  3193  3193 W binder:3193_7: type=1400 audit(0.0:121): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-25 21:28:18.805  3193  3193 W binder:3193_7: type=1400 audit(0.0:122): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-25 21:28:18.848  1460  4883 I BackupAndSyncValidation: Scheduling the service.
+11-25 21:28:18.857  1550  1811 I SP      : Scheduling job with delay of 0s for {m:b:u:l, bg}, 1 candidates
+11-25 21:28:18.859  4193  4193 I rcs     : [RcsBindingManager] Checking if we should rebind to previous service. Attempt 0
+11-25 21:28:18.859  4193  4193 I rcs     : [RcsBindingManager] No valid settings for binding.
+11-25 21:28:18.861  1550  1550 I SpBackgroundTask: SuperpacksBackgroundJobService.onStartJob():23 onStartJob: android.app.job.JobParameters@a97b863
+11-25 21:28:18.861  1550  1550 I SP      : ====> Starting job {m:b:u:l, bg}
+11-25 21:28:18.863  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gass.chimera.SchedulePeriodicTasksService finished executing. cause:5 result: 1 elapsed_millis: 262 uptime_millis: 262 exec_start_elapsed_seconds: 77 [CONTEXT service_id=218 ]
+11-25 21:28:18.879  1460  4887 I AlarmManager: setExactAndAllowWhileIdle [name: RemindersNSREFRESH_TIME_REMINDERS_ALARM type: 0 triggerAtMillis: 1795651200000]
+11-25 21:28:18.881  1460  4709 I SemanticLocation: [Scheduler] Periodic Task com.google.android.gms.semanticlocationhistory.geller.GellerCleanupService.GellerCleanup is scheduled to run EVERY_DAY [CONTEXT service_id=173 ]
+11-25 21:28:18.902  1460  4883 I PeopleInitIntentOp: Not initializing debuggability [CONTEXT service_id=5 ]
+11-25 21:28:18.903  1460  5205 V SmartDevice: [ModuleInitializer] ModuleInitializer got intent Intent { act=android.intent.action.BOOT_COMPLETED flg=0x89000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } with flag 2
+11-25 21:28:18.904  1460  5205 W ChimeraUtils: Module com.google.android.gms.smartdevice missing resource null(0)
+11-25 21:28:18.919  4272  4448 I BugleJobs: GenericWorkerQueueAction: Rescheduling immediately to continue processing since we didn't yet reach the end.
+11-25 21:28:18.920  1550  1811 I SP      : Scheduling: download registered, 0 started, 0 paused, 1 scheduled, 1 pending: next-word-predictor:tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be * {m:b:u:l, bg}
+11-25 21:28:18.926  1460  4883 I TelephonySpamInit: On boot completed TelephonySpam module initialized [CONTEXT service_id=150 ]
+11-25 21:28:18.926  1460  4883 I TelephonySpamInit: onModuleUpdated TelephonySpam module initialized [CONTEXT service_id=150 ]
+11-25 21:28:18.927  1460  4883 I SpamListSync: scheduleSyncTasks [CONTEXT service_id=150 ]
+11-25 21:28:18.927  1460  4883 I SpamListSync: schedulePeriodicTask [CONTEXT service_id=150 ]
+11-25 21:28:18.929  1460  4883 I SpamListSync: scheduleOneTimeTask [CONTEXT service_id=150 ]
+11-25 21:28:18.929  1460  4883 I ThreadNetworkModuleInit: Initializing runtime states: 2 [CONTEXT service_id=305 ]
+11-25 21:28:18.931  1460  4883 I ThreadNetworkModuleInit: Enabled component com.google.android.gms.threadnetwork.ui.ShareCredentialsActivity [CONTEXT service_id=305 ]
+11-25 21:28:18.932  1460  4883 I ThreadBrSynchronizer: Scheduled periodic Border Router sync task: PeriodicBrSync [CONTEXT service_id=305 ]
+11-25 21:28:18.935  4193  4834 I TapAndPay: Disabling TapAndPay HCE service [CONTEXT service_id=79 ]
+11-25 21:28:18.936  4272  4402 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_RESPONSE_QUEUED_GenericWorkerQueueAction elapsedRealTime: 78095 currentTimeMillis: 1795642098936
+11-25 21:28:18.951  1460  5205 D SmartDevice: [ModuleInitializer] Module init - scheduling buffered logs cleanup task
+11-25 21:28:18.952  1460  5205 I SmartDevice: [CleanBufferedLogsService] Periodic task upload_buffered_logs_periodic scheduled!
+11-25 21:28:18.952  1460  5206 I TrustedTime: Skip initializing when trusted time feature disabled. [CONTEXT service_id=326 ]
+11-25 21:28:18.972  1460  4883 I SnapshotHandler: Unable to retrieve flag snapshot for com.google.android.gms.trustagent.activeunlock.primary#com.google.android.gms, using defaults.
+11-25 21:28:18.974  1460  4883 W ActiveUnlock: Tried to set empty triggers [CONTEXT service_id=327 ]
+11-25 21:28:18.975  1460  4883 W ChimeraUtils: Module com.google.android.gms.activeunlock_primary missing resource null(0)
+11-25 21:28:18.985  4272  4272 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_EXECUTE_QUEUED_GenericWorkerQueueAction elapsedRealTime: 78144 currentTimeMillis: 1795642098985
+11-25 21:28:18.993  4272  4448 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_BACKGROUND_QUEUED_GenericWorkerQueueAction elapsedRealTime: 78152 currentTimeMillis: 1795642098993
+11-25 21:28:18.994  4272  4402 I BugleJobs: GenericWorkerQueueAction: Bailing early, no work found, no failed work found
+11-25 21:28:18.994  4272  4402 I BugleDataModel: ActionExecutorImpl: Timestamp for ACTION_RESPONSE_QUEUED_GenericWorkerQueueAction elapsedRealTime: 78153 currentTimeMillis: 1795642098994
+11-25 21:28:19.001  1460  5206 I SystemUpdate: [Control,UpdateReminderDialogControl] Received action: android.intent.action.BOOT_COMPLETED
+11-25 21:28:19.030  4193  4193 I Thunderbird: starting outgoing sms listener [CONTEXT service_id=226 ]
+11-25 21:28:19.037  1460  5206 I Wear_Controller: Wearable module requires a companion app to be installed.
+11-25 21:28:19.037  1460  5206 I Wear_Controller: onStartup - Wear is not available on this device.
+11-25 21:28:19.047  4628  4650 I app.ordena: Background concurrent copying GC freed 207443(6887KB) AllocSpace objects, 2(104KB) LOS objects, 49% free, 10MB/20MB, paused 66us,19us total 134.888ms
+11-25 21:28:19.103  1550  1811 I SP      : Scheduling: job start ({m:b:u:l, bg}), 1 started, 0 paused, 0 scheduled, 1 pending: next-word-predictor:tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be @ * {m:b:u:l, bg}
+11-25 21:28:19.103  1550  1811 I SP      : Requesting download of URL https://www.gstatic.com/android/keyboard/next_word_predictor/prod/tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be.zip to tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be.zip.fetched (constraints: m:b:u:l)
+11-25 21:28:19.104  1550  1811 I EmojiSlicingStrategy: EmojiSlicingStrategy.matchEnabledLocalesWithPackLocales():127 matchEnabledLocalesWithPackLocales() : User enabled 1 locales; returning 1 slices
+11-25 21:28:19.104  1550  1811 I SP      : Syncing emoji (20190807) with slices: [{7b9ddb0b8c001e17cee03b1edf554b20, m:*:*:*}], metadata: false
+11-25 21:28:19.126  1550  1811 I SP      : Scheduling: download registered, 1 started, 0 paused, 0 scheduled, 2 pending: next-word-predictor:tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be @ {m:b:u:l, bg}, emoji:7b9ddb0b8c001e17cee03b1edf554b20 @ * {m:b:u:l, bg}
+11-25 21:28:19.127  1550  1811 I SP      : Requesting download of URL https://www.gstatic.com/android/keyboard/emoji/20190522144303/en-us.zip to 7b9ddb0b8c001e17cee03b1edf554b20.zip.fetched (constraints: m:b:u:l)
+11-25 21:28:19.134   336  5220 I resolv  : GetAddrInfoHandler::run: {100 100 100 983140 10147 0}
+11-25 21:28:19.145   336  5223 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-25 21:28:19.145   336  5223 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x755f21159530
+11-25 21:28:19.145   336  5223 I resolv  : doQuery: rcode=0, ancount=8, return value=161
+11-25 21:28:19.146   336  5222 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-25 21:28:19.146   336  5222 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x755fb115db90
+11-25 21:28:19.147   336  5222 I resolv  : doQuery: rcode=0, ancount=8, return value=257
+11-25 21:28:19.147  1550  5219 D TrafficStats: tagSocket(143) with statsTag=0xffffffff, statsUid=-1
+11-25 21:28:19.155  1550  1811 I SP      : Sync for bundled_emoji succeeded in 1458 ms: {added: [7b9ddb0b8c001e17cee03b1edf554b20], metadata: false
+11-25 21:28:19.166  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/ConscryptEngineSocket;->setUseSessionTickets(Z)V (max-target-q,core-platform-api, reflection, denied)
+11-25 21:28:19.166  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/OpenSSLSocketImpl;->setUseSessionTickets(Z)V (max-target-q,core-platform-api, reflection, denied)
+11-25 21:28:19.167  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/AbstractConscryptSocket;->setUseSessionTickets(Z)V (max-target-q, reflection, denied)
+11-25 21:28:19.167  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/ConscryptEngineSocket;->setHostname(Ljava/lang/String;)V (max-target-q,core-platform-api, reflection, denied)
+11-25 21:28:19.167  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/OpenSSLSocketImpl;->setHostname(Ljava/lang/String;)V (max-target-q,core-platform-api, reflection, denied)
+11-25 21:28:19.167  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/AbstractConscryptSocket;->setHostname(Ljava/lang/String;)V (max-target-q, reflection, denied)
+11-25 21:28:19.167  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/OpenSSLSocketImpl;->setAlpnProtocols([B)V (max-target-q,core-platform-api, reflection, denied)
+11-25 21:28:19.167  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/AbstractConscryptSocket;->setAlpnProtocols([B)V (max-target-q, reflection, denied)
+11-25 21:28:19.178  4193  4834 W SystemServiceRegistry: No service published for: contexthub
+11-25 21:28:19.198  1550  1811 I SP      : GC for 'bundled_emoji' (10) with ttl of 0 ms took 0 ms (0/0/0)
+11-25 21:28:19.202  3193  5051 D TrafficStats: tagSocket(126) with statsTag=0x1809, statsUid=-1
+11-25 21:28:19.203  3193  5051 D TrafficStats: tagSocket(126) with statsTag=0x1809, statsUid=-1
+11-25 21:28:19.204  3193  5051 D TrafficStats: tagSocket(126) with statsTag=0x1809, statsUid=-1
+11-25 21:28:19.208  1550  1837 I EmojiSuperpacksManager: EmojiSuperpacksManager.processPackSet():498 processPackSet() : isBundled = true
+11-25 21:28:19.208  1550  1813 I EmojiSuperpacksManager: EmojiSuperpacksManager.triggerSync():374 triggerSync() : isBundled = false
+11-25 21:28:19.208  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():117 Reading en_US emoji shortcuts
+11-25 21:28:19.210  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():134 Read en_US emoji shortcuts successfully.
+11-25 21:28:19.219  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():63 1 emoji shortcut maps loaded.
+11-25 21:28:19.220  1550  1811 I SP      : Registering emoji.20190807, url: https://www.gstatic.com/android/keyboard/modelpack/emoji/20190807165503/superpacks_manifest.zip, constraints: m:*:*:*, flags: fg, requested: 20190807, current: 20190807
+11-25 21:28:19.223  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():72 Finished loading emoji shortcuts
+11-25 21:28:19.225  1550  1811 I EmojiSlicingStrategy: EmojiSlicingStrategy.matchEnabledLocalesWithPackLocales():127 matchEnabledLocalesWithPackLocales() : User enabled 1 locales; returning 1 slices
+11-25 21:28:19.227  4193  4484 I SemanticLocation: [MDD] ModelBundleMetadata: File not found [CONTEXT service_id=173 ]
+11-25 21:28:19.227  4193  4484 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at java.io.FileInputStream.<init>(FileInputStream.java:160)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at android.app.ContextImpl.openFileInput(ContextImpl.java:745)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at android.content.ContextWrapper.openFileInput(ContextWrapper.java:249)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at android.content.ContextWrapper.openFileInput(ContextWrapper.java:249)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at android.content.ContextWrapper.openFileInput(ContextWrapper.java:249)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at bzxt.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at bzxd.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):9)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at bzxd.<init>(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at cadn.j(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at cadn.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):36)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at cadn.b(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at com.google.android.gms.semanticlocation.service.SemanticLocationChimeraService.k(:com.google.android.gms@231818047@23.18.18 (190800-535401451):9)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at com.google.android.gms.semanticlocation.service.SemanticLocationChimeraService.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):17)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at cacs.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):68)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at java.lang.Thread.run(Thread.java:1012)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at libcore.io.Linux.open(Native Method)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8063)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+11-25 21:28:19.227  4193  4484 I SemanticLocation: 	... 22 more
+11-25 21:28:19.233  1550  1811 I SP      : Syncing emoji (20190807) with slices: [{7b9ddb0b8c001e17cee03b1edf554b20, m:*:*:*}], metadata: false
+11-25 21:28:19.249  4193  5058 I GCoreUlr: WorldUpdater received intent Intent { act=com.google.android.location.reporting.ACTION_UPDATE_WORLD cmp=com.google.android.gms/com.google.android.location.reporting.service.DispatchingService (has extras) } with receiverAction init
+11-25 21:28:19.254   524   533 I system_server: Background young concurrent copying GC freed 924969(23MB) AllocSpace objects, 14(344KB) LOS objects, 45% free, 27MB/49MB, paused 1.526ms,44us total 281.900ms
+11-25 21:28:19.266  1460  1466 I gle.android.gms: Background young concurrent copying GC freed 88970(4313KB) AllocSpace objects, 70(3560KB) LOS objects, 25% free, 17MB/23MB, paused 19us,16us total 366.475ms
+11-25 21:28:19.272  4193  5058 I GCoreUlr: WorldUpdater:init: Ensuring that reporting is stopped because of reasons: (no Google accounts)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: [MDD] ModelBundleMetadata: File not found [CONTEXT service_id=173 ]
+11-25 21:28:19.276  4193  4484 I SemanticLocation: java.io.FileNotFoundException: /data/user/0/com.google.android.gms/files/model_bundle_metadata.pb: open failed: ENOENT (No such file or directory)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at java.io.FileInputStream.<init>(FileInputStream.java:160)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at android.app.ContextImpl.openFileInput(ContextImpl.java:745)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at android.content.ContextWrapper.openFileInput(ContextWrapper.java:249)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at android.content.ContextWrapper.openFileInput(ContextWrapper.java:249)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at android.content.ContextWrapper.openFileInput(ContextWrapper.java:249)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at bzxt.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at bzxd.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):9)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at cadb.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):8)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at java.lang.Thread.run(Thread.java:1012)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at libcore.io.Linux.open(Native Method)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8063)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+11-25 21:28:19.276  4193  4484 I SemanticLocation: 	... 14 more
+11-25 21:28:19.279  4193  5058 I GCoreUlr: Unbound from all signal providers.
+11-25 21:28:19.288  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.icing.proxy.IcingInternalCorporaUpdateService started execution. cause:7 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.289   336  5230 I resolv  : GetAddrInfoHandler::run: {100 786532 100 983140 10131 0}
+11-25 21:28:19.289  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.icing.proxy.IcingInternalCorporaUpdateService finished executing. cause:7 result: 1 elapsed_millis: 199 uptime_millis: 199 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.290   336  5231 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-25 21:28:19.290   336  5231 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x755fb115cd90
+11-25 21:28:19.290   336  5231 I resolv  : doQuery: rcode=0, ancount=8, return value=264
+11-25 21:28:19.292  4193  4193 I GCoreUlr: Unbound from all signal providers.
+11-25 21:28:19.292  4193  4193 I GCoreUlr: Stopping handler for UlrDispSvcFast
+11-25 21:28:19.296   336  5232 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-25 21:28:19.296   336  5232 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x755f21157010
+11-25 21:28:19.296   336  5232 I resolv  : doQuery: rcode=0, ancount=8, return value=168
+11-25 21:28:19.296  1460  4141 D TrafficStats: tagSocket(158) with statsTag=0x30000408, statsUid=-1
+11-25 21:28:19.301  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/OpenSSLSocketImpl;->getAlpnSelectedProtocol()[B (max-target-q,core-platform-api, reflection, denied)
+11-25 21:28:19.301  1550  5219 W putmethod.latin: Accessing hidden method Lcom/android/org/conscrypt/AbstractConscryptSocket;->getAlpnSelectedProtocol()[B (max-target-q, reflection, denied)
+11-25 21:28:19.310  1550  1550 W JobService: onNetworkChanged() not implemented in com.google.android.apps.inputmethod.libs.dataservice.superpacks.SuperpacksBackgroundJobService. Must override in a subclass.
+11-25 21:28:19.319  1550  1811 I SP      : Scheduling: download registered, 0 started, 0 paused, 0 scheduled, 2 pending: next-word-predictor:tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be @ {m:b:u:l, bg}, emoji:7b9ddb0b8c001e17cee03b1edf554b20 @ {m:b:u:l, bg}
+11-25 21:28:19.320  1550  1811 I SP      : GC for 'emoji' (10) with ttl of 0 ms took 0 ms (0/0/0)
+11-25 21:28:19.325  1550  1811 I AbstractSyncResultCallback: AbstractSyncResultCallback.onFailure():36 onFailure(): emoji.sync cancelled; expected if new request supersedes pending one.
+11-25 21:28:19.328  1460  4141 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+11-25 21:28:19.328  1460  4141 W Conscrypt: 	at com.google.android.gms.org.conscrypt.Platform.setSocketWriteTimeout(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:19.328  1460  4141 W Conscrypt: 	at com.google.android.gms.org.conscrypt.ConscryptFileDescriptorSocket.setSoWriteTimeout(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.331   826   902 D EGL_emulation: app_time_stats: avg=396.35ms min=1.58ms max=1366.06ms count=5
+11-25 21:28:19.332   826   826 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-25 21:28:19.360  1460  1460 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.asterism.service.START pkg=com.google.android.gms }
+11-25 21:28:19.393  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gass.chimera.SchedulePeriodicTasksService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.396  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gass.chimera.SchedulePeriodicTasksService finished executing. cause:5 result: 1 elapsed_millis: 20 uptime_millis: 20 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.399  1460  4141 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+11-25 21:28:19.400  1460  4141 W Conscrypt: 	at com.google.android.gms.org.conscrypt.Platform.setSocketWriteTimeout(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:19.400  1460  4141 W Conscrypt: 	at com.google.android.gms.org.conscrypt.ConscryptFileDescriptorSocket.setSoWriteTimeout(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.429  4193  5058 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:7 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.429  4193  4353 I TapAndPay: Disabling TapAndPay HCE service [CONTEXT service_id=79 ]
+11-25 21:28:19.430  1460  3364 W Pay     : Active account was null, notification task will be cancelled. [CONTEXT service_id=198 ]
+11-25 21:28:19.441  1460  3364 W Pay     : No account found on the task or the device. Notification task will not be rescheduled. [CONTEXT service_id=198 ]
+11-25 21:28:19.446  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:7 result: 2 elapsed_millis: 30 uptime_millis: 30 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.490  4193  5058 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.491  4193  4353 I TapAndPay: Disabling TapAndPay HCE service [CONTEXT service_id=79 ]
+11-25 21:28:19.502  4193  5056 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 29 uptime_millis: 29 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: Retrieving snapshot for com.google.lighter.android#com.google.android.gms failed
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: java.util.concurrent.TimeoutException: Timed out waiting for Task
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at cfsz.o(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at bwch.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at bwch.j(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at bwch.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at crqn.apply(:com.google.android.gms@231818047@23.18.18 (190800-535401451):10)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlny.d(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlnz.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):9)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlpk.execute(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlnv.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlnv.l(:com.google.android.gms@231818047@23.18.18 (190800-535401451):10)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlnv.o(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlrs.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlqs.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at dlrt.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at crqq.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at crri.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-25 21:28:19.502  1460  5171 E PhenotypeFlagCommitter: 	at java.lang.Thread.run(Thread.java:1012)
+11-25 21:28:19.528  4193  4484 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.auth.account.be.legacy.AuthCronService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.542  4193  4484 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.auth.account.be.legacy.AuthCronService finished executing. cause:5 result: 3 elapsed_millis: 25 uptime_millis: 25 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.577  4193  5055 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.581  1460  3364 I Pay     : Device does not support HCE. [CONTEXT service_id=198 ]
+11-25 21:28:19.585  4193  4484 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 2 elapsed_millis: 18 uptime_millis: 18 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.624  4193  5055 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.628  1460  4141 I Checkin : [CheckinRequestProcessor] updateCheckinIdTokenFileFromResponse, Reading existing AID
+11-25 21:28:19.631  4193  4484 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 21 uptime_millis: 21 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.632  1460  4141 I Checkin : [CheckinRequestProcessor] Default Task : Checkin Succeeded: https://android.googleapis.com/checkin (fragment #1).
+11-25 21:28:19.646  1460  4141 I Checkin : [CheckinOperation] Checkin Operation finished with result: SUCCESS finish time: 78805.
+11-25 21:28:19.649  1460  4139 I AccountSeedingPrefetchI: AccountSeedingPrefetchInit intent operation started. [CONTEXT service_id=42 ]
+11-25 21:28:19.654  1550  1811 I SP      : Download stopped: next-word-predictor:tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be, succeeded, size: 1963527
+11-25 21:28:19.659  1550  1811 I SP      : Scheduling: download stopped, 0 started, 0 paused, 0 scheduled, 1 pending: emoji:7b9ddb0b8c001e17cee03b1edf554b20 @ {m:b:u:l, bg}
+11-25 21:28:19.669  4628  4697 D EGL_emulation: app_time_stats: avg=278.92ms min=61.88ms max=824.39ms count=4
+11-25 21:28:19.700   336   376 I netd    : setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.90ms>
+11-25 21:28:19.700   336   376 I netd    : setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.01ms>
+11-25 21:28:19.700   336   376 I netd    : setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.02ms>
+11-25 21:28:19.700   336   376 I netd    : setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.01ms>
+11-25 21:28:19.708  4193  5058 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.714  4193  4353 I TapAndPay: Disabling TapAndPay HCE service [CONTEXT service_id=79 ]
+11-25 21:28:19.715  1460  3364 W Pay     : Active account was null, notification task will be cancelled. [CONTEXT service_id=198 ]
+11-25 21:28:19.715  1460  3364 E Pay     : [Migration operation] Active tapandpay account not found! [CONTEXT service_id=198 ]
+11-25 21:28:19.721  4193  4484 W SystemServiceRegistry: No service published for: contexthub
+11-25 21:28:19.723  4193  4484 W ctxmgr  : [UpdateFenceRegistrationOperation] Gesture nano app is not available. [CONTEXT service_id=47 ]
+11-25 21:28:19.726  1553  1615 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=46fc82fb-2181-4564-aa0b-0ed3e0b8532b, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker, TikTokWorker#com.google.android.apps.wellbeing.autodnd.SettingsInjectionWorker } ]
+11-25 21:28:19.727  1460  3364 I Pay     : Migration flag not enabled. [CONTEXT service_id=198 ]
+11-25 21:28:19.737  1460  3364 I Pay     : Attempting migration; GP2 not installed. [CONTEXT service_id=198 ]
+11-25 21:28:19.750  1460  3364 I Pay     : Attempting migration; GP2 not installed. [CONTEXT service_id=198 ]
+11-25 21:28:19.754  1460  3364 I Pay     : Migration flag not enabled. [CONTEXT service_id=198 ]
+11-25 21:28:19.755  1460  3364 I Pay     : Migration flag not enabled. [CONTEXT service_id=198 ]
+11-25 21:28:19.755  1460  3364 I Pay     : Migration flag not enabled. [CONTEXT service_id=198 ]
+11-25 21:28:19.755  1460  3364 I Pay     : Migration flag not enabled. [CONTEXT service_id=198 ]
+11-25 21:28:19.755  1460  3364 I Pay     : [SeTosMigration] walletJpEligibility is not enabled [CONTEXT service_id=198 ]
+11-25 21:28:19.756  1460  3364 I Pay     : Wallet install state NOT_INSTALLED [CONTEXT service_id=198 ]
+11-25 21:28:19.757  1460  3364 I Pay     : Migration flag not enabled. [CONTEXT service_id=198 ]
+11-25 21:28:19.758  4193  4484 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 87 uptime_millis: 87 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.769  1550  1811 I SP      : Sync for next-word-predictor succeeded in 1893 ms: {added: [tflite-nwp-9343e8ce723e0b22aa8e2733a7d475be], metadata: false
+11-25 21:28:19.771  1550  1811 I SP      : GC for 'next-word-predictor' (10) with ttl of 0 ms took 0 ms (0/0/0)
+11-25 21:28:19.772  4193  5055 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.790  4193  4484 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 23 uptime_millis: 23 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.804  1550  1811 I SP      : <==== Finishing job {m:b:u:l, bg}, 943 ms. elapsed since start
+11-25 21:28:19.806  4193  5055 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.udc.service.UdcContextInitService started execution. cause:5 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.811  4193  4484 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.udc.service.UdcContextInitService finished executing. cause:5 result: 1 elapsed_millis: 9 uptime_millis: 9 exec_start_elapsed_seconds: 78 [CONTEXT service_id=218 ]
+11-25 21:28:19.830  1550  1811 I SP      : Download stopped: emoji:7b9ddb0b8c001e17cee03b1edf554b20, succeeded, size: 62634
+11-25 21:28:19.868   826   884 D SplashScreenView: Build android.window.SplashScreenView{48ebb9d V.E...... ......ID 0,0-0,0}
+11-25 21:28:19.868   826   884 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-25 21:28:19.868   826   884 D SplashScreenView: Branding: view: android.view.View{65de812 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-25 21:28:19.871  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@9637faf in: PAUSED
+11-25 21:28:19.871  4628  4628 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=app.ordena.MainActivity@9637faf
+11-25 21:28:19.878   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-25 21:28:19.921  1550  1811 I SP      : Sync for emoji succeeded in 696 ms: {added: [7b9ddb0b8c001e17cee03b1edf554b20], metadata: false
+11-25 21:28:19.981  1550  1811 I SP      : GC for 'emoji' (10) with ttl of 0 ms took 0 ms (0/0/0)
+11-25 21:28:19.983  1550  4098 I EmojiSuperpacksManager: EmojiSuperpacksManager.processPackSet():498 processPackSet() : isBundled = false
+11-25 21:28:19.983  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():117 Reading en_US emoji shortcuts
+11-25 21:28:19.987  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():134 Read en_US emoji shortcuts successfully.
+11-25 21:28:19.989  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():63 1 emoji shortcut maps loaded.
+11-25 21:28:19.991  1550  1813 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():72 Finished loading emoji shortcuts
+11-25 21:28:19.993  4993  5014 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-25 21:28:20.224   524   541 W ziparchive: Unable to open '/data/app/~~bcu7SHOcAb-kfbAcXc24EQ==/app.ordena.test-WO3aXg7WpX7QP7xjZ4IGSQ==/base.dm': No such file or directory
+11-25 21:28:20.225   524   541 I ActivityTaskManager: Displayed app.ordena.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +364ms
+11-25 21:28:20.249   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-25 21:28:20.274  1057  1088 D SliceBuilder: Creating slice for: com.android.settings.accessibility.MagnificationGesturesPreferenceController
+11-25 21:28:20.286   826   882 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@ea07499
+11-25 21:28:20.286   524  2558 W InputManager-JNI: Input channel object '3e0e31f Splash Screen app.ordena.test (client)' was disposed without first being removed with the input manager!
+11-25 21:28:20.291   826   902 D EGL_emulation: app_time_stats: avg=1455.64ms min=958.39ms max=1952.90ms count=2
+11-25 21:28:20.303  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-25 21:28:20.304  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode 2
+11-25 21:28:20.308   524  1705 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+11-25 21:28:20.309  1074  2061 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=z1{delegate=s1{logId=17, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=X1.T@b51adc6
+11-25 21:28:20.361  1668  2032 I AiAiEcho: Predicting[0]:
+11-25 21:28:20.361  1668  2032 I AiAiEcho: EchoTargets:
+11-25 21:28:20.361  1668  2032 I AiAiEcho: Filtered by AiAi flag check:
+11-25 21:28:20.361  1668  2032 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-25 21:28:20.362  1668  2032 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-25 21:28:20.392  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@9637faf in: STOPPED
+11-25 21:28:20.394  4628  4628 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=app.ordena.MainActivity@9637faf
+11-25 21:28:20.430  3103  3103 I A       : Created gRPC endpoint to "search" for service class com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService
+11-25 21:28:20.433   524   533 I system_server: Background young concurrent copying GC freed 1050699(22MB) AllocSpace objects, 1(20KB) LOS objects, 42% free, 28MB/49MB, paused 45us,2.867ms total 152.526ms
+11-25 21:28:20.437  3103  3470 I A       : Using proto config with mendel
+11-25 21:28:20.440  3103  3470 I A       : Using proto config with mendel
+11-25 21:28:20.442  3103  3320 I A       : group apa_head_suggest not present without account in *
+11-25 21:28:20.442  3103  3305 I A       : incrementApaDataDownloadStoreStatus(latency = PT0.008S, appVersion = 13.17.16.23, status = NOT_FOUND, locale = *, fileGroupnames = apa_head_suggest, accountScoped = false, localGroupsAvailable = false, timeSinceSearchBoot = Optional[PT42.183S] (THIRTY_SECONDS_TO_ONE_MINUTE), timeSinceDataDownloadInit = PT27.252S (TEN_SECONDS_TO_THIRTY_SECONDS))
+11-25 21:28:20.442  3103  3305 I A       : incrementApaDataDownloadStoreStatusNotFound(appVersion = 13.17.16.23, locale = *, groupName = apa_head_suggest, accountScoped = false, foundGroups = 0, status = 0, localGroupsAvailable = false)
+11-25 21:28:20.442  3643  5242 I ConfigUpdater: Update started
+11-25 21:28:20.474   826   902 D EGL_emulation: app_time_stats: avg=349.12ms min=57.45ms max=721.51ms count=3
+11-25 21:28:20.501  1074  1074 D SearchTargetUtil:  query= size=15
+11-25 21:28:20.501  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=christian music industry,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=christian music industry searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 2d32d3bf-1e93-4714-9a3e-3ec248149cea
+11-25 21:28:20.511  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=divorced parents share a cruise cabin,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=divorced parents share a cruise cabin searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 18933b7a-0be6-43c0-8f39-d65cf5da4ce6
+11-25 21:28:20.524  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=today wordle hints,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=today wordle hints searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 1c45c6c1-1f7e-4954-94b4-d0c2ca8139b0
+11-25 21:28:20.545  4993  4993 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@c822511
+11-25 21:28:20.545   524  2558 W InputManager-JNI: Input channel object 'c5b0704 app.ordena.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=quinn hughes injury update,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=quinn hughes injury update searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: c77797b7-b507-452b-8a23-40a839a7aa0f
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=mathematics riemann hypothesis,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=mathematics riemann hypothesis searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: be6ea647-31a1-495e-b18b-2743104153fe
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=extra_tall_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{bitmap_url=data:image/jpeg;base64,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
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=tennessee elections,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=tennessee elections searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 7182c316-bf2c-4af3-b804-b8d3b087caf9
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=college football playoff bracket,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=college football playoff bracket searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 7a5add07-d92b-483f-8653-92813327127e
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=wendys class action lawsuit,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=wendys class action lawsuit searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 44b709d0-7fd4-4b50-858e-12c699cf72ea
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=black friday ssd deals 1tb 2tb,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=black friday ssd deals 1tb 2tb searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: a5c79944-b7f8-4d8a-83f1-d7d05a4e49b0
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=nyt strands hints,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=nyt strands hints searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: b61b215a-442b-4c76-87e5-2ac1a00c0854
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=extra_tall_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{bitmap_url=data:image/jpeg;base64,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
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=barcelona champions league,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=barcelona champions league searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: a2308979-bd95-4d5b-810c-9bf29d9652e2
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=target black friday deals,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=target black friday deals searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 6807bdcf-8145-4f76-b0ac-ed4ded1554b0
+11-25 21:28:20.547  1074  1074 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=vitamin k deficiency bleeding,group_id=web33701,response_id=401e13b4-6598-486e-a1d9-d2cb1c60925b,support_query_builder=false,} searchAction=vitamin k deficiency bleeding searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=false,suggestion_action_rpc=2,}ParentID: null targetID: 41b47e1c-d725-4ca9-8560-3ea726d9ee7d
+11-25 21:28:20.575  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@9637faf in: DESTROYED
+11-25 21:28:20.575  4628  4628 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-25 21:28:20.575  4628  4628 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@53b8fa0
+11-25 21:28:20.576   524  1785 I ImeTracker: com.google.android.apps.nexuslauncher:995c11b1: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-25 21:28:20.576   524  1785 I ImeTracker: com.google.android.apps.nexuslauncher:995c11b1: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-25 21:28:20.594  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-25 21:28:20.673  4628  4685 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@b3472d5]
+11-25 21:28:20.678  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-25 21:28:20.679  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.google.android.apps.nexuslauncher fieldId=0 fieldName=null extras=null}, false)
+11-25 21:28:20.679  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-25 21:28:20.680  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-25 21:28:20.702   336   376 I netd    : tetherGetStats() -> {[]} <0.44ms>
+11-25 21:28:20.724   524  2558 W InputManager-JNI: Input channel object '11df05e app.ordena/app.ordena.MainActivity (client)' was disposed without first being removed with the input manager!
+11-25 21:28:20.732  4628  4685 I TestRunner: finished: bienvenidaLlevaAlInicio(app.ordena.LauncherUiTest)

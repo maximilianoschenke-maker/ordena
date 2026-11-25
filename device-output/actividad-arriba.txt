@@ -1,0 +1,1 @@
+      topResumedActivity=ActivityRecord{ec0c07 u0 app.ordena/.MainActivity t27}

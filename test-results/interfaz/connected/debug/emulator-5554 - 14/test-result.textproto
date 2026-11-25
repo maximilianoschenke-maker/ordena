@@ -1,0 +1,484 @@
+# 2026-11-25T21:28:47.802481954Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 9
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "moverUnaAppDeCarpeta"
+    start_time {
+      seconds: 1795642082
+      nanos: 489000000
+    }
+    end_time {
+      seconds: 1795642091
+      nanos: 552000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-moverUnaAppDeCarpeta.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "renombrarYReordenarCarpetas"
+    start_time {
+      seconds: 1795642091
+      nanos: 610000000
+    }
+    end_time {
+      seconds: 1795642097
+      nanos: 927000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-renombrarYReordenarCarpetas.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "bienvenidaLlevaAlInicio"
+    start_time {
+      seconds: 1795642097
+      nanos: 958000000
+    }
+    end_time {
+      seconds: 1795642100
+      nanos: 917000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-bienvenidaLlevaAlInicio.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "inicioMuestraCarpetaHerramientas"
+    start_time {
+      seconds: 1795642101
+      nanos: 45000000
+    }
+    end_time {
+      seconds: 1795642103
+      nanos: 148000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-inicioMuestraCarpetaHerramientas.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "personalizarTipografiaTituloYEfecto"
+    start_time {
+      seconds: 1795642103
+      nanos: 179000000
+    }
+    end_time {
+      seconds: 1795642108
+      nanos: 449000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-personalizarTipografiaTituloYEfecto.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "categoriasEntiendenLoQueSeEscribe"
+    start_time {
+      seconds: 1795642108
+      nanos: 610000000
+    }
+    end_time {
+      seconds: 1795642114
+      nanos: 848000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-categoriasEntiendenLoQueSeEscribe.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "avisaCuandoSeInstalaUnaAppNueva"
+    start_time {
+      seconds: 1795642114
+      nanos: 850000000
+    }
+    end_time {
+      seconds: 1795642117
+      nanos: 149000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-avisaCuandoSeInstalaUnaAppNueva.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "busquedaEntiendeCategoriasYApps"
+    start_time {
+      seconds: 1795642117
+      nanos: 151000000
+    }
+    end_time {
+      seconds: 1795642121
+      nanos: 440000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-busquedaEntiendeCategoriasYApps.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "LauncherUiTest"
+    test_package: "app.ordena"
+    test_method: "ocultarYVolverAMostrarUnaApp"
+    start_time {
+      seconds: 1795642121
+      nanos: 472000000
+    }
+    end_time {
+      seconds: 1795642126
+      nanos: 443000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/logcat-app.ordena.LauncherUiTest-ocultarYVolverAMostrarUnaApp.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/ordena/ordena/app/build/outputs/androidTest-results/connected/debug/emulator-5554 - 14/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

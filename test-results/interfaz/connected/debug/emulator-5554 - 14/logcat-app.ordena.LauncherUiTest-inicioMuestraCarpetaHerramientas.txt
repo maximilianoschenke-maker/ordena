@@ -1,0 +1,222 @@
+11-25 21:28:20.738  4628  4685 I TestRunner: started: inicioMuestraCarpetaHerramientas(app.ordena.LauncherUiTest)
+11-25 21:28:20.740  4628  4685 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@c070ed5]
+11-25 21:28:20.743  4193  4193 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+11-25 21:28:20.751   524  1786 D ConnectivityService: requestNetwork for uid/pid:1000/524 asUid: 10130 activeRequest: null callbackRequest: 133 [NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10130 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+11-25 21:28:20.782   524   753 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10130 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-25 21:28:20.783   524   753 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10130 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-25 21:28:20.783   524   753 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10130 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-25 21:28:20.783   524   753 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=134, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10130 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-25 21:28:20.785   524   760 D ConnectivityService: NetReassign [134 : null → 100] [c 0] [a 1] [i 7]
+11-25 21:28:20.848  2149  5250 D DownloadManager: [3] Starting
+11-25 21:28:20.852  4193  4193 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.clearcut.bootcount.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+11-25 21:28:20.852  1460  1460 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.mdh.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-25 21:28:20.855  1460  1460 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.mdh.service.listener.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-25 21:28:20.862  4628  4685 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-25 21:28:20.876   336   376 I netd    : bandwidthSetGlobalAlert(2097152) <0.10ms>
+11-25 21:28:20.876   524   751 W system_server: Long monitor contention with owner NetworkStats (749) at void android.net.connectivity.com.android.server.net.NetworkStatsService.performPoll(int)(NetworkStatsService.java:2333) waiters=0 in android.net.NetworkStatsHistory android.net.connectivity.com.android.server.net.NetworkStatsService.internalGetHistoryForNetwork(android.net.NetworkTemplate, int, int, int, int, long, long) for 171ms
+11-25 21:28:20.881   336   376 I netd    : bandwidthRemoveInterfaceQuota(eth0) <0.55ms>
+11-25 21:28:20.881   336   376 I netd    : bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.42ms>
+11-25 21:28:20.886   826   884 D SplashScreenView: Build android.window.SplashScreenView{ce30170 V.E...... ......ID 0,0-0,0}
+11-25 21:28:20.886   826   884 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-25 21:28:20.886   826   884 D SplashScreenView: Branding: view: android.view.View{3b7ece9 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-25 21:28:20.887   336   376 I netd    : bandwidthRemoveInterfaceQuota(eth0) <0.26ms>
+11-25 21:28:20.888   336   376 I netd    : bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.47ms>
+11-25 21:28:20.890   524   825 D NetworkStatsObservers: Unregistering RequestInfo from pid/uid:524/1000(android) for DataUsageRequest [ requestId=8, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3562033 ] accessLevel:3
+11-25 21:28:20.901   524   751 D NetworkStatsObservers: Registering observer for RequestInfo from pid/uid:524/1000(android) for DataUsageRequest [ requestId=9, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3559519 ] accessLevel:3
+11-25 21:28:20.904  3643  5242 I ConfigUpdater: Update started
+11-25 21:28:20.912   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-25 21:28:20.954   336   376 I netd    : tetherGetStats() -> {[]} <0.27ms>
+11-25 21:28:20.956  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@7bcbbaf in: PRE_ON_CREATE
+11-25 21:28:20.957  4628  4628 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-25 21:28:20.969  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@7bcbbaf in: CREATED
+11-25 21:28:20.969  4628  4628 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=app.ordena.MainActivity@7bcbbaf
+11-25 21:28:20.970  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@7bcbbaf in: STARTED
+11-25 21:28:20.970  4628  4628 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=app.ordena.MainActivity@7bcbbaf
+11-25 21:28:20.988   826   838 I ndroid.systemui: NativeAlloc concurrent copying GC freed 209863(10MB) AllocSpace objects, 3(60KB) LOS objects, 50% free, 14MB/29MB, paused 57us,47us total 955.953ms
+11-25 21:28:20.989  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@7bcbbaf in: RESUMED
+11-25 21:28:20.990  4628  4628 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=app.ordena.MainActivity@7bcbbaf
+11-25 21:28:21.034  4628  4628 D AutofillManager: Fill dialog is enabled:false, hints=[]
+11-25 21:28:21.123  4628  4628 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-25 21:28:21.123  4628  4628 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-25 21:28:21.227  1074  1074 W FrameTracker: Missed App frame:UNKNOWN: 74, 10043, 147286913, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-25 21:28:21.227  1074  1074 W FrameTracker: Missed SF frame:UNKNOWN: 74, 10043, 147286913, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-25 21:28:21.228  1074  1074 W FrameTracker: Missing SF jank callback for vsyncId: 10109, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-25 21:28:21.228  1074  1074 W FrameTracker: Missed App frame:UNKNOWN: 10, 10251, 52001366, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-25 21:28:21.228  1074  1074 W FrameTracker: Missed SF frame:UNKNOWN: 10, 10251, 52001366, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-25 21:28:21.228  1074  2151 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-9 - not enough time since last trigger
+11-25 21:28:21.289   524   541 W ziparchive: Unable to open '/data/app/~~aKKbusIOvknXYbT45AVPlA==/app.ordena-3izWywYA2B4t-muqT-uIEA==/base.dm': No such file or directory
+11-25 21:28:21.290   524   541 I ActivityTaskManager: Displayed app.ordena/.MainActivity for user 0: +417ms
+11-25 21:28:21.303  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-25 21:28:21.303  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode 2
+11-25 21:28:21.310   826   882 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@7cec49c
+11-25 21:28:21.310   524   815 W InputManager-JNI: Input channel object '56b84f9 Splash Screen app.ordena (client)' was disposed without first being removed with the input manager!
+11-25 21:28:21.321   524  1320 I ImeTracker: app.ordena:9530a706: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-25 21:28:21.322   524  1320 I ImeTracker: app.ordena:9530a706: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-25 21:28:21.323  1074  1129 I ImeTracker: com.google.android.apps.nexuslauncher:86a04006: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-25 21:28:21.323   524  1320 I ImeTracker: com.google.android.apps.nexuslauncher:86a04006: onCancelled at PHASE_SERVER_CLIENT_FOCUSED
+11-25 21:28:21.330  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-25 21:28:21.336  1074  2061 D OneSearchSuggestProvider: Shut down the binder channel
+11-25 21:28:21.343  1074  3853 I IPCThreadState: oneway function results for code 2 on binder at 0x75e7320b2460 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-25 21:28:21.348  3103  3524 I PBSessionCacheImpl: Deleted sessionId[13648933966015431] from persistence.
+11-25 21:28:21.354  3103  3470 W SearchServiceCore: Abort, client detached.
+11-25 21:28:21.356  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-25 21:28:21.356  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=app.ordena fieldId=0 fieldName=null extras=null}, false)
+11-25 21:28:21.356  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-25 21:28:21.357  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-25 21:28:21.444  3955  3969 I gs.intelligence: Background young concurrent copying GC freed 67443(3267KB) AllocSpace objects, 5(996KB) LOS objects, 19% free, 7402KB/9165KB, paused 28us,14us total 200.577ms
+11-25 21:28:21.463  3643  5242 I ConfigUpdater: Update started
+11-25 21:28:21.472  4193  4212 I .gms.persistent: Background young concurrent copying GC freed 224722(13MB) AllocSpace objects, 0(0B) LOS objects, 48% free, 13MB/27MB, paused 28us,24us total 260.565ms
+11-25 21:28:21.494   336  5258 I resolv  : GetAddrInfoHandler::run: {100 983140 100 983140 10087 0}
+11-25 21:28:21.496   336  5260 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-25 21:28:21.496   336  5260 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x755f21159530
+11-25 21:28:21.496   336  5260 I resolv  : doQuery: rcode=0, ancount=8, return value=161
+11-25 21:28:21.498   336  5259 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-25 21:28:21.498   336  5259 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x755fb115db90
+11-25 21:28:21.498   336  5259 I resolv  : doQuery: rcode=0, ancount=8, return value=257
+11-25 21:28:21.500  2149  5250 D TrafficStats: tagSocket(78) with statsTag=0xffffff01, statsUid=10130
+11-25 21:28:21.515  2149  5257 D DownloadManager: [4] Starting
+11-25 21:28:21.572  2149  5257 D TrafficStats: tagSocket(80) with statsTag=0xffffff01, statsUid=10130
+11-25 21:28:21.585  2149  5262 D DownloadManager: [5] Starting
+11-25 21:28:21.602  2149  5262 D TrafficStats: tagSocket(85) with statsTag=0xffffff01, statsUid=10130
+11-25 21:28:21.677  2149  5250 D DownloadManager: [3] Finished with status SUCCESS
+11-25 21:28:21.726   826   884 D SplashScreenView: Build android.window.SplashScreenView{6b78f11 V.E...... ......ID 0,0-0,0}
+11-25 21:28:21.726   826   884 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-25 21:28:21.726   826   884 D SplashScreenView: Branding: view: android.view.View{1e54876 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-25 21:28:21.728  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@7bcbbaf in: PAUSED
+11-25 21:28:21.728  4628  4628 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=app.ordena.MainActivity@7bcbbaf
+11-25 21:28:21.795   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-25 21:28:21.849  4193  4193 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+11-25 21:28:21.875  1074  1110 W System  : A resource failed to call release.
+11-25 21:28:21.875  1074  1110 W System  : A resource failed to call release.
+11-25 21:28:21.875  1074  1110 W System  : A resource failed to call release.
+11-25 21:28:21.875  1074  1110 W System  : A resource failed to call release.
+11-25 21:28:21.875  1074  1110 W System  : A resource failed to call release.
+11-25 21:28:21.875  1074  1110 W System  : A resource failed to call release.
+11-25 21:28:21.891   826   902 D EGL_emulation: app_time_stats: avg=708.71ms min=33.45ms max=1383.96ms count=2
+11-25 21:28:21.934   826   902 D EGL_emulation: app_time_stats: avg=821.62ms min=186.22ms max=1457.01ms count=2
+11-25 21:28:21.935  4993  5014 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-25 21:28:21.952   524   533 I system_server: Background young concurrent copying GC freed 715193(19MB) AllocSpace objects, 13(2724KB) LOS objects, 38% free, 30MB/49MB, paused 43us,60us total 250.959ms
+11-25 21:28:22.015  2149  5257 D DownloadManager: [4] Finished with status SUCCESS
+11-25 21:28:22.073  1460  1460 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.service.START pkg=com.google.android.gms }
+11-25 21:28:22.080  2149  5269 D DownloadManager: [6] Starting
+11-25 21:28:22.096   828  4747 I PermissionControllerServiceImpl: Updating user sensitive for user 0
+11-25 21:28:22.125   828  4747 I PermissionControllerServiceImpl: Updating user sensitive for uid 10129
+11-25 21:28:22.128   400   400 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-25 21:28:22.133  1046  1046 D CarrierSvcBindHelper: onPackageModified: com.google.android.apps.messaging
+11-25 21:28:22.142  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.143  1046  1046 D CarrierSvcBindHelper: No carrier app for: 0
+11-25 21:28:22.144  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.149  2149  5262 D DownloadManager: [5] Finished with status SUCCESS
+11-25 21:28:22.149   826   826 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+11-25 21:28:22.158   524   623 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+11-25 21:28:22.168  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-25 21:28:22.169  1020  1304 D BtGatt.ScanManager: uid 10131 isForeground true scanMode 2
+11-25 21:28:22.182   826   898 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+11-25 21:28:22.182   826   898 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+11-25 21:28:22.183   826   898 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+11-25 21:28:22.183   826   898 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+11-25 21:28:22.184   826   898 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+11-25 21:28:22.184   826   898 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+11-25 21:28:22.185   826   898 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+11-25 21:28:22.185   826   898 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+11-25 21:28:22.185   826   898 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+11-25 21:28:22.186   826   898 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+11-25 21:28:22.187   826   898 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+11-25 21:28:22.198   524   611 I RoleService: Granting default roles...
+11-25 21:28:22.200  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@7bcbbaf in: STOPPED
+11-25 21:28:22.200  4628  4628 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=app.ordena.MainActivity@7bcbbaf
+11-25 21:28:22.227   524  1705 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+11-25 21:28:22.230  1074  2061 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=z1{delegate=s1{logId=21, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=X1.T@570834f
+11-25 21:28:22.263  1046  1345 D ImsResolver: maybeAddedImsService, packageName: com.google.android.apps.messaging
+11-25 21:28:22.279   828  4747 I PermissionControllerServiceImpl: Updating user sensitive for uid 10119
+11-25 21:28:22.298  1668  2032 I AiAiEcho: Predicting[0]:
+11-25 21:28:22.298  1668  2032 I AiAiEcho: EchoTargets:
+11-25 21:28:22.298  1668  2032 I AiAiEcho: Filtered by AiAi flag check:
+11-25 21:28:22.298  1668  2032 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:
+11-25 21:28:22.329   524  1785 I ImeTracker: com.google.android.apps.nexuslauncher:9a7efa22: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-25 21:28:22.329   524  1785 I ImeTracker: com.google.android.apps.nexuslauncher:9a7efa22: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-25 21:28:22.375  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227
+11-25 21:28:22.376  1668  2032 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-25 21:28:22.385  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-25 21:28:22.388  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.google.android.apps.nexuslauncher fieldId=0 fieldName=null extras=null}, false)
+11-25 21:28:22.391  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-25 21:28:22.393  1550  1550 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-25 21:28:22.408   828  1013 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION
+11-25 21:28:22.413   828  1013 I Role    : com.google.android.gms not qualified for android.app.role.SYSTEM_CALL_STREAMING due to missing RequiredComponent{mIntentFilterData=IntentFilterData{mAction='android.telecom.CallStreamingService', mCategories='[]', mDataScheme='null', mDataType='null'}, mMinTargetSdkVersion=1, mFlags='0', mPermission='android.permission.BIND_CALL_STREAMING_SERVICE', mQueryFlags=0, mMetaData=[]}
+11-25 21:28:22.413   828  1013 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.SYSTEM_CALL_STREAMING
+11-25 21:28:22.461  1046  1046 D CarrierSvcBindHelper: onPackageModified: com.google.android.apps.wellbeing
+11-25 21:28:22.461   828  1013 W Role    : Default holder doesn't have required signing certificate: com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58
+11-25 21:28:22.466   828  4747 I PermissionControllerServiceImpl: Updating user sensitive for uid 10154
+11-25 21:28:22.577  1046  1046 D CarrierSvcBindHelper: No carrier app for: 0
+11-25 21:28:22.624   826   882 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@da8f04e
+11-25 21:28:22.626   524   538 W InputManager-JNI: Input channel object 'a24297d Splash Screen app.ordena.test (client)' was disposed without first being removed with the input manager!
+11-25 21:28:22.641  1046  1046 D CarrierSvcBindHelper: onPackageModified: com.google.android.contacts
+11-25 21:28:22.642  1046  1046 D CarrierSvcBindHelper: No carrier app for: 0
+11-25 21:28:22.647  1046  1046 D CarrierSvcBindHelper: onPackageModified: com.google.android.gms
+11-25 21:28:22.647  1046  1046 D CarrierSvcBindHelper: No carrier app for: 0
+11-25 21:28:22.649   826   826 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+11-25 21:28:22.653   826   826 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+11-25 21:28:22.654   524   623 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+11-25 21:28:22.655  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.656  1046  1345 D ImsResolver: maybeAddedImsService, packageName: com.google.android.apps.wellbeing
+11-25 21:28:22.658  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.658  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.658  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.658  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.658  1020  1020 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+11-25 21:28:22.658  1046  1345 D ImsResolver: maybeAddedImsService, packageName: com.google.android.contacts
+11-25 21:28:22.686  2149  5269 D TrafficStats: tagSocket(80) with statsTag=0xffffff01, statsUid=10130
+11-25 21:28:22.750   828  4747 I PermissionControllerServiceImpl: Updating user sensitive for uid 10131
+11-25 21:28:22.752  4628  4628 D LifecycleMonitor: Lifecycle status change: app.ordena.MainActivity@7bcbbaf in: DESTROYED
+11-25 21:28:22.752  4628  4628 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-25 21:28:22.753  4628  4628 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@5b330b3
+11-25 21:28:22.754   826   898 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+11-25 21:28:22.754   524   550 W system_server: Long monitor contention with owner ActivityManager (551) at void com.android.server.am.BroadcastQueueModernImpl.checkPendingColdStartValidity()(BroadcastQueueModernImpl.java:551) waiters=2 in int com.android.server.am.ActivityManagerService.broadcastIntentWithFeature(android.app.IApplicationThread, java.lang.String, android.content.Intent, java.lang.String, android.content.IIntentReceiver, int, java.lang.String, android.os.Bundle, java.lang.String[], java.lang.String[], java.lang.String[], int, android.os.Bundle, boolean, boolean, int) for 572ms
+11-25 21:28:22.757  4993  4993 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@3b81926
+11-25 21:28:22.760  4272  4419 I Bugle   : BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of bdxy@a1dfbc5
+11-25 21:28:22.765  4628  4685 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@c070ed5]
+11-25 21:28:22.770   524  1320 W InputManager-JNI: Input channel object '6ebd9e9 app.ordena.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+11-25 21:28:22.774  1046  1345 D ImsResolver: maybeAddedImsService, packageName: com.google.android.gms
+11-25 21:28:22.801   826   898 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+11-25 21:28:22.802   826   898 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+11-25 21:28:22.802   826   898 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+11-25 21:28:22.804   826   898 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+11-25 21:28:22.805   826   898 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+11-25 21:28:22.805   826   898 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+11-25 21:28:22.805   826   898 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+11-25 21:28:22.805   826   898 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+11-25 21:28:22.805   826   898 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+11-25 21:28:22.805   826   898 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+11-25 21:28:22.819   524   550 E system_server: No package ID 7f found for resource ID 0x7f08038b.
+11-25 21:28:22.819   524   550 E system_server: No package ID 7f found for resource ID 0x7f150be5.
+11-25 21:28:22.819   524   550 E system_server: No package ID 7f found for resource ID 0x7f150be5.
+11-25 21:28:22.819   524   550 E system_server: No package ID 7f found for resource ID 0x7f150be4.
+11-25 21:28:22.857   524   623 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+11-25 21:28:22.860   826   898 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+11-25 21:28:22.867   828   844 I ssioncontroller: Background concurrent copying GC freed 111643(5702KB) AllocSpace objects, 3(204KB) LOS objects, 49% free, 7008KB/13MB, paused 22us,19us total 169.220ms
+11-25 21:28:22.877   524   550 I AppBindingService: Stopping: com.google.android.apps.messaging/com.google.android.ims.binding.SystemBindingService u0
+11-25 21:28:22.882  1668  1668 I AiAiEcho: AppFetcherImpl onPackageChanged com.google.android.apps.messaging.
+11-25 21:28:22.885  1668  3260 I AiAiEcho: AppIndexer Package:[com.google.android.apps.messaging] UserProfile:[0] Enabled:[true].
+11-25 21:28:22.885  1668  3260 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.google.android.apps.messaging], userId:[0], reason:[package is updated.].
+11-25 21:28:22.913   826   898 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+11-25 21:28:22.914  3103  3103 I A       : Created gRPC endpoint to "search" for service class com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService
+11-25 21:28:22.923  4722  4722 I BugleRcsEngine: [2] SystemBindingService.onCreate: SystemBindingService onCreate
+11-25 21:28:22.924  3103  3103 E A       : disposing SearchServiceClient after timeout []
+11-25 21:28:22.926  4722  5059 I BugleRcsEngine: [84] bptx.run: SystemBindingService: Starting JibeService
+11-25 21:28:22.931   524  2060 D ConnectivityService: requestNetwork for uid/pid:10129/4722 activeRequest: null callbackRequest: 135 [NetworkRequest [ REQUEST id=136, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 10129 RequestorPkg: com.google.android.apps.messaging UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+11-25 21:28:22.935   524   760 D ConnectivityService: NetReassign [136 : null → 100] [c 0] [a 0] [i 3]
+11-25 21:28:22.935  4722  5059 I BugleRcsEngine: [84] bsgz.b: EngineBroadcaster: Broadcasting provisioning intent rcs.intent.action.rcsSystemBinding to Bugle with extras redacted-pii:[null] from source SYSTEM_BINDING_SERVICE
+11-25 21:28:22.944  4722  5059 W BugleRcsEngine: [84] bpxc.w: Unable to send diagnostic log
+11-25 21:28:22.947  4193  4834 I Fitness : OnPackageChangedOperation got intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x45000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) } [CONTEXT service_id=17 ]
+11-25 21:28:22.953  1460  1460 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.ocr.service.internal.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalApiService }
+11-25 21:28:22.956  3103  3470 I A       : Using proto config with mendel
+11-25 21:28:22.958   524   753 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=136, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 10129 RequestorPkg: com.google.android.apps.messaging UnderlyingNetworks: Null] ]
+11-25 21:28:22.958   524   753 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=136, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 10129 RequestorPkg: com.google.android.apps.messaging UnderlyingNetworks: Null] ]
+11-25 21:28:22.959  3103  3470 W A       : Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+11-25 21:28:22.959   524   753 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=136, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 10129 RequestorPkg: com.google.android.apps.messaging UnderlyingNetworks: Null] ]
+11-25 21:28:22.960   524   753 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=136, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 10129 RequestorPkg: com.google.android.apps.messaging UnderlyingNetworks: Null] ]
+11-25 21:28:22.960   524  1785 W InputManager-JNI: Input channel object 'b6388f0 app.ordena/app.ordena.MainActivity (client)' was disposed without first being removed with the input manager!
+11-25 21:28:22.965  4628  4628 I Choreographer: Skipped 45 frames!  The application may be doing too much work on its main thread.
+11-25 21:28:22.966  3103  3305 I A       : group apa_head_suggest not present without account in *
+11-25 21:28:22.968  3103  3320 I A       : incrementApaDataDownloadStoreStatus(latency = PT0.019S, appVersion = 13.17.16.23, status = NOT_FOUND, locale = *, fileGroupnames = apa_head_suggest, accountScoped = false, localGroupsAvailable = false, timeSinceSearchBoot = Optional[PT44.697S] (THIRTY_SECONDS_TO_ONE_MINUTE), timeSinceDataDownloadInit = PT29.766S (TEN_SECONDS_TO_THIRTY_SECONDS))
+11-25 21:28:22.970  4628  4685 I TestRunner: finished: inicioMuestraCarpetaHerramientas(app.ordena.LauncherUiTest)

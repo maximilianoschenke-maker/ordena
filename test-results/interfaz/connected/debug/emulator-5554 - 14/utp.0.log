@@ -1,0 +1,48 @@
+INFO: Constructing runner from config.
+INFO: Configuring Android Instrumentation driver: android_instrumentation_runtime {
+  instrumentation_info {
+    app_package: "app.ordena"
+    test_package: "app.ordena.test"
+    test_runner_class: "androidx.test.runner.AndroidJUnitRunner"
+  }
+  instrumentation_args {
+    args_map {
+      key: "additionalTestOutputDir"
+      value: "/sdcard/Android/media/app.ordena/additional_test_output"
+    }
+    no_window_animation: true
+  }
+}
+am_instrument_timeout: 31536000
+
+INFO: Configuring AndroidTestApkInstallerPlugin: apks_to_install {
+  apk_paths: "/home/runner/work/ordena/ordena/app/build/outputs/apk/debug/app-debug.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+apks_to_install {
+  apk_paths: "/home/runner/work/ordena/ordena/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+
+INFO: No installables found in test fixture. Nothing to install.
+INFO: Installing [/home/runner/work/ordena/ordena/app/build/outputs/apk/debug/app-debug.apk] on device emulator-5554.
+INFO: Installing [/home/runner/work/ordena/ordena/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk] on device emulator-5554.
+INFO: Start logcat streaming.
+INFO: Running Android Instrumentation driver.
+INFO: Copying files from device to host: /sdcard/Android/media/app.ordena/additional_test_output to /home/runner/work/ordena/ordena/app/build/outputs/connected_android_test_additional_output/debugAndroidTest/connected/emulator-5554 - 14
+INFO: Stop logcat streaming.
+INFO: Uninstalling app.ordena for device emulator-5554.
+INFO: Uninstalling app.ordena.test for device emulator-5554.
+INFO: Execute app.ordena.LauncherUiTest.moverUnaAppDeCarpeta: PASSED
+INFO: Execute app.ordena.LauncherUiTest.renombrarYReordenarCarpetas: PASSED
+INFO: Execute app.ordena.LauncherUiTest.bienvenidaLlevaAlInicio: PASSED
+INFO: Execute app.ordena.LauncherUiTest.inicioMuestraCarpetaHerramientas: PASSED
+INFO: Execute app.ordena.LauncherUiTest.personalizarTipografiaTituloYEfecto: PASSED
+INFO: Execute app.ordena.LauncherUiTest.categoriasEntiendenLoQueSeEscribe: PASSED
+INFO: Execute app.ordena.LauncherUiTest.avisaCuandoSeInstalaUnaAppNueva: PASSED
+INFO: Execute app.ordena.LauncherUiTest.busquedaEntiendeCategoriasYApps: PASSED
+INFO: Execute app.ordena.LauncherUiTest.ocultarYVolverAMostrarUnaApp: PASSED
